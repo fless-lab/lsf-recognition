@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+*.env
+
+# Datasets
+data/raw/
+data/processed/
+data/train/
+data/val/
+data/test/
+data/nlp/
+
+# Models
+models/trained/
+models/pretrained/
+
+# Miscellaneous
+*.log
+*.DS_Store
+*.ipynb_checkpoints/
