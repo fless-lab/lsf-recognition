@@ -10,13 +10,14 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Setup MediaPipe instances
-mp_holistic = mp.solutions.holistic
-mp_drawing = mp.solutions.drawing_utils
+# Correct MediaPipe imports for linter
+from mediapipe import solutions as mp_solutions
+mp_holistic = mp_solutions.holistic
+mp_drawing = mp_solutions.drawing_utils
 
 class LandmarkExtractor:
     def __init__(self, min_detection_confidence=0.5, min_tracking_confidence=0.5):
-        """Initialize the landmark extractor with MediaPipe Holistic."""
+        logger.info("Initialisation de MediaPipe Holistic...")
         self.holistic = mp_holistic.Holistic(
             min_detection_confidence=min_detection_confidence,
             min_tracking_confidence=min_tracking_confidence,
@@ -26,6 +27,7 @@ class LandmarkExtractor:
             smooth_segmentation=True,
             refine_face_landmarks=True
         )
+        logger.info("MediaPipe Holistic initialisé.")
         
     def extract_keypoints(self, results):
         """Extracts landmark data into a structured format with confidence scores."""
@@ -68,10 +70,10 @@ class LandmarkExtractor:
         return landmarks, metadata
 
     def process_video(self, video_path):
-        """Processes a single video file to extract landmarks for each frame."""
+        logger.info(f"Début du traitement vidéo : {video_path}")
         cap = cv2.VideoCapture(video_path)
         if not cap.isOpened():
-            logger.error(f"Could not open video {video_path}")
+            logger.error(f"Impossible d'ouvrir la vidéo {video_path}")
             return None, None
 
         # Get video properties
@@ -90,6 +92,8 @@ class LandmarkExtractor:
             ret, frame = cap.read()
             if not ret:
                 break
+            if frame_idx % 10 == 0:
+                logger.info(f"Frame {frame_idx}/{frame_count}...")
 
             # Convert the BGR image to RGB
             image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -129,10 +133,11 @@ class LandmarkExtractor:
             'average_right_hand_confidence': np.mean([meta['right_hand_confidence'] for meta in frame_metadata])
         }
         
+        logger.info(f"Extraction terminée pour {video_path} : {len(keypoints_list)} frames extraites.")
         return np.array(keypoints_list), video_metadata
 
 def main():
-    """Main function to extract landmarks from all video sources with provenance tracking."""
+    logger.info("=== DÉBUT Extraction des landmarks ===")
     script_path = os.path.abspath(__file__)
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_path)))
     data_path = os.path.join(project_root, 'data')
@@ -151,7 +156,11 @@ def main():
     total_processed = 0
     total_errors = 0
     
+    # Dictionary to track sign sources
+    sign_sources = {}
+    
     for source in sources:
+        logger.info(f"--- Source : {source} ---")
         source_path = os.path.join(raw_path, source)
         if not os.path.exists(source_path):
             logger.warning(f"Source path {source_path} does not exist. Skipping.")
@@ -169,30 +178,39 @@ def main():
         logger.info(f"Found {len(video_files)} video files in {source}")
         
         for video_path in video_files:
+            logger.info(f"Traitement du signe : {os.path.basename(video_path)}")
             # Extract sign name from path
             sign_name = os.path.splitext(os.path.basename(video_path))[0]
             
-            # Create output directory preserving source information
-            output_dir = os.path.join(processed_path, source.replace('/', '_'), sign_name)
+            # Extract source name (e.g., 'jauvert' from 'parlr/jauvert')
+            source_name = source.split('/')[-1]
+            
+            # Create output directory: processed/{sign_name}/
+            output_dir = os.path.join(processed_path, sign_name)
             os.makedirs(output_dir, exist_ok=True)
             
-            # Create output filenames
-            base_name = os.path.splitext(os.path.basename(video_path))[0]
-            landmarks_file = os.path.join(output_dir, f"{base_name}_landmarks.npy")
-            metadata_file = os.path.join(output_dir, f"{base_name}_metadata.json")
+            # Create output filenames: {source_name}.npy
+            landmarks_file = os.path.join(output_dir, f"{source_name}.npy")
+            metadata_file = os.path.join(output_dir, f"{source_name}_metadata.json")
+            
+            # Track sign sources for later analysis
+            if sign_name not in sign_sources:
+                sign_sources[sign_name] = []
+            if source_name not in sign_sources[sign_name]:
+                sign_sources[sign_name].append(source_name)
             
             # Skip if already processed
             if os.path.exists(landmarks_file) and os.path.exists(metadata_file):
-                logger.info(f"Skipping {base_name}, already processed.")
+                logger.info(f"Skipping {sign_name} from {source_name}, already processed.")
                 continue
             
             try:
-                logger.info(f"Processing: {base_name}")
-                
+                logger.info(f"Extraction : {sign_name} depuis {source_name}")
                 # Extract landmarks and metadata
                 landmarks, metadata = extractor.process_video(video_path)
                 
                 if landmarks is not None and metadata is not None:
+                    logger.info(f"Sauvegarde des landmarks et métadonnées pour {sign_name} ({source_name})")
                     # Save landmarks
                     np.save(landmarks_file, landmarks)
                     
@@ -201,17 +219,38 @@ def main():
                         json.dump(metadata, f, indent=2, ensure_ascii=False)
                     
                     total_processed += 1
-                    logger.info(f"Successfully processed {base_name} - {landmarks.shape[0]} frames")
+                    logger.info(f"Successfully processed {sign_name} from {source_name} - {landmarks.shape[0]} frames")
                 else:
                     total_errors += 1
-                    logger.error(f"Failed to extract landmarks from {base_name}")
+                    logger.error(f"Failed to extract landmarks from {sign_name} from {source_name}")
                     
             except Exception as e:
                 total_errors += 1
-                logger.error(f"Error processing {base_name}: {str(e)}")
+                logger.error(f"Erreur lors du traitement de {sign_name} ({source_name}) : {str(e)}")
                 continue
 
-    logger.info(f"Extraction complete. Processed: {total_processed}, Errors: {total_errors}")
+    # Save sign sources analysis
+    sources_analysis_file = os.path.join(data_path, 'sign_sources_analysis.json')
+    with open(sources_analysis_file, 'w', encoding='utf-8') as f:
+        json.dump(sign_sources, f, indent=2, ensure_ascii=False)
+    
+    # Print summary
+    logger.info(f"=== FIN Extraction landmarks : {total_processed} vidéos traitées, {total_errors} erreurs ===")
+    logger.info(f"Found {len(sign_sources)} unique signs")
+    
+    # Count signs by number of sources
+    source_counts = {}
+    for sign, sources in sign_sources.items():
+        num_sources = len(sources)
+        if num_sources not in source_counts:
+            source_counts[num_sources] = []
+        source_counts[num_sources].append(sign)
+    
+    logger.info("Sign distribution by number of sources:")
+    for num_sources, signs in sorted(source_counts.items()):
+        logger.info(f"  {num_sources} source(s): {len(signs)} signs")
+        if num_sources <= 3:  # Show details for signs with few sources
+            logger.info(f"    Examples: {', '.join(signs[:5])}")
 
 if __name__ == '__main__':
     main() 

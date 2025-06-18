@@ -7,344 +7,380 @@ import random
 from scipy.interpolate import interp1d
 from sklearn.preprocessing import StandardScaler
 import copy
+from typing import List, Tuple, Dict, Any
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 class AdvancedAugmenter:
-    def __init__(self, augmentation_factor=10):
-        """
-        Initialize the advanced augmenter.
-        
-        Args:
-            augmentation_factor: Number of augmented versions to create per original sample
-        """
+    def __init__(self, augmentation_factor=5):
+        """Initialize the advanced augmenter with multiple augmentation techniques."""
+        logger.info(f"Initialisation de l'augmentateur avancé (factor={augmentation_factor})")
         self.augmentation_factor = augmentation_factor
-        self.rng = np.random.RandomState(42)  # For reproducibility
         
-    def add_gaussian_noise(self, data, noise_level=0.01):
-        """Add Gaussian noise to landmarks."""
-        noise = self.rng.normal(0, noise_level, data.shape)
-        return data + noise
+    def augment_landmarks(self, landmarks: np.ndarray, metadata: Dict[str, Any]) -> List[Tuple[np.ndarray, Dict[str, Any]]]:
+        """Apply multiple augmentation techniques to create diverse training samples."""
+        logger.info(f"Augmentation d'un échantillon ({landmarks.shape[0]} frames)")
+        augmented_samples = []
+        
+        # Original sample (no augmentation)
+        augmented_samples.append((landmarks.copy(), metadata.copy()))
+        
+        # Generate augmented versions
+        for i in range(self.augmentation_factor - 1):
+            # Choose augmentation technique
+            technique = random.choice(['spatial', 'temporal', 'occlusion', 'perspective', 'mixup'])
+            
+            if technique == 'spatial':
+                aug_landmarks, aug_metadata = self._spatial_augmentation(landmarks, metadata)
+            elif technique == 'temporal':
+                aug_landmarks, aug_metadata = self._temporal_augmentation(landmarks, metadata)
+            elif technique == 'occlusion':
+                aug_landmarks, aug_metadata = self._occlusion_augmentation(landmarks, metadata)
+            elif technique == 'perspective':
+                aug_landmarks, aug_metadata = self._perspective_augmentation(landmarks, metadata)
+            elif technique == 'mixup':
+                aug_landmarks, aug_metadata = self._mixup_augmentation(landmarks, metadata)
+            
+            # Add augmentation info to metadata
+            aug_metadata['augmentation'] = {
+                'technique': technique,
+                'version': i + 1,
+                'original_file': metadata.get('video_path', 'unknown')
+            }
+            
+            augmented_samples.append((aug_landmarks, aug_metadata))
+        
+        return augmented_samples
     
-    def add_temporal_noise(self, data, noise_level=0.005):
-        """Add temporal noise (smooth variations over time)."""
-        # Create smooth noise that varies over time
-        time_steps = data.shape[0]
-        temporal_noise = self.rng.normal(0, noise_level, (time_steps, 1))
+    def _spatial_augmentation(self, landmarks: np.ndarray, metadata: Dict[str, Any]) -> Tuple[np.ndarray, Dict[str, Any]]:
+        """Apply spatial transformations (rotation, scaling, translation)."""
+        aug_landmarks = landmarks.copy()
         
-        # Smooth the noise using a simple moving average
-        window_size = max(1, time_steps // 10)
-        smoothed_noise = np.convolve(temporal_noise.flatten(), 
-                                   np.ones(window_size)/window_size, 
-                                   mode='same').reshape(-1, 1)
+        # Random rotation (small angles)
+        angle = random.uniform(-15, 15)  # degrees
+        angle_rad = np.radians(angle)
         
-        # Apply to all landmark dimensions
-        return data + smoothed_noise * np.ones_like(data)
-    
-    def scale_landmarks(self, data, scale_range=0.1):
-        """Scale landmarks with realistic bounds."""
-        scale_factor = 1.0 + self.rng.uniform(-scale_range, scale_range)
-        return data * scale_factor
-    
-    def translate_landmarks(self, data, translate_range=0.05):
-        """Translate landmarks in 3D space."""
-        # Different translation for each dimension
-        translation = self.rng.uniform(-translate_range, translate_range, 3)
+        # Random scaling
+        scale_x = random.uniform(0.9, 1.1)
+        scale_y = random.uniform(0.9, 1.1)
         
-        # Apply translation to x, y, z coordinates
-        # Assuming landmarks are in format: [x1, y1, z1, v1, x2, y2, z2, v2, ...]
-        translated_data = data.copy()
+        # Random translation
+        tx = random.uniform(-0.05, 0.05)
+        ty = random.uniform(-0.05, 0.05)
         
-        # For pose landmarks (33 points, 4 values each: x, y, z, visibility)
+        # Apply transformations to pose landmarks (first 33*4 values)
+        pose_start = 0
         pose_end = 33 * 4
-        for i in range(0, pose_end, 4):
-            if i + 2 < pose_end:
-                translated_data[:, i] += translation[0]  # x
-                translated_data[:, i + 1] += translation[1]  # y
-                translated_data[:, i + 2] += translation[2]  # z
         
-        # For face landmarks (468 points, 3 values each: x, y, z)
-        face_start = pose_end
-        face_end = face_start + 468 * 3
-        for i in range(face_start, face_end, 3):
-            if i + 2 < face_end:
-                translated_data[:, i] += translation[0]  # x
-                translated_data[:, i + 1] += translation[1]  # y
-                translated_data[:, i + 2] += translation[2]  # z
-        
-        # For hand landmarks (21 points each, 3 values each: x, y, z)
-        hand_start = face_end
-        for hand_end in [hand_start + 21 * 3, hand_start + 42 * 3]:  # Left and right hands
-            for i in range(hand_start, hand_end, 3):
-                if i + 2 < hand_end:
-                    translated_data[:, i] += translation[0]  # x
-                    translated_data[:, i + 1] += translation[1]  # y
-                    translated_data[:, i + 2] += translation[2]  # z
-            hand_start = hand_end
-        
-        return translated_data
-    
-    def rotate_landmarks(self, data, max_angle=15):
-        """Rotate landmarks around Y-axis (vertical rotation)."""
-        angle_deg = self.rng.uniform(-max_angle, max_angle)
-        angle_rad = np.radians(angle_deg)
-        
-        cos_a, sin_a = np.cos(angle_rad), np.sin(angle_rad)
-        rotation_matrix = np.array([[cos_a, 0, sin_a],
-                                  [0, 1, 0],
-                                  [-sin_a, 0, cos_a]])
-        
-        rotated_data = data.copy()
-        
-        # Apply rotation to pose landmarks
-        pose_end = 33 * 4
-        for i in range(0, pose_end, 4):
-            if i + 2 < pose_end:
-                xyz = data[:, i:i+3]
-                rotated_xyz = np.dot(xyz, rotation_matrix.T)
-                rotated_data[:, i:i+3] = rotated_xyz
-        
-        # Apply rotation to face landmarks
-        face_start = pose_end
-        face_end = face_start + 468 * 3
-        for i in range(face_start, face_end, 3):
-            if i + 2 < face_end:
-                xyz = data[:, i:i+3]
-                rotated_xyz = np.dot(xyz, rotation_matrix.T)
-                rotated_data[:, i:i+3] = rotated_xyz
-        
-        # Apply rotation to hand landmarks
-        hand_start = face_end
-        for hand_end in [hand_start + 21 * 3, hand_start + 42 * 3]:
-            for i in range(hand_start, hand_end, 3):
-                if i + 2 < hand_end:
-                    xyz = data[:, i:i+3]
-                    rotated_xyz = np.dot(xyz, rotation_matrix.T)
-                    rotated_data[:, i:i+3] = rotated_xyz
-            hand_start = hand_end
-        
-        return rotated_data
-    
-    def temporal_warping(self, data, warp_factor=0.2):
-        """Apply temporal warping to simulate different signing speeds."""
-        time_steps = data.shape[0]
-        
-        # Create warping function
-        original_time = np.linspace(0, 1, time_steps)
-        warp_amount = self.rng.uniform(-warp_factor, warp_factor)
-        
-        # Create non-linear warping
-        warped_time = original_time + warp_amount * np.sin(np.pi * original_time)
-        warped_time = np.clip(warped_time, 0, 1)
-        
-        # Interpolate data
-        warped_data = np.zeros_like(data)
-        for dim in range(data.shape[1]):
-            interpolator = interp1d(original_time, data[:, dim], 
-                                  kind='linear', bounds_error=False, fill_value='extrapolate')
-            warped_data[:, dim] = interpolator(warped_time)
-        
-        return warped_data
-    
-    def partial_occlusion(self, data, occlusion_prob=0.3):
-        """Simulate partial occlusion by zeroing out some landmarks."""
-        occluded_data = data.copy()
-        
-        # Randomly occlude some landmarks
-        for frame_idx in range(data.shape[0]):
-            if self.rng.random() < occlusion_prob:
-                # Randomly select landmarks to occlude
-                num_landmarks_to_occlude = self.rng.randint(1, 5)
-                landmark_indices = self.rng.choice(data.shape[1], num_landmarks_to_occlude, replace=False)
-                occluded_data[frame_idx, landmark_indices] = 0
-        
-        return occluded_data
-    
-    def perspective_transform(self, data, perspective_factor=0.1):
-        """Apply perspective transformation to simulate different viewing angles."""
-        # Create perspective transformation matrix
-        perspective_matrix = np.array([
-            [1 + self.rng.uniform(-perspective_factor, perspective_factor), 
-             self.rng.uniform(-perspective_factor, perspective_factor), 0],
-            [self.rng.uniform(-perspective_factor, perspective_factor), 
-             1 + self.rng.uniform(-perspective_factor, perspective_factor), 0],
-            [self.rng.uniform(-perspective_factor, perspective_factor), 
-             self.rng.uniform(-perspective_factor, perspective_factor), 1]
-        ])
-        
-        transformed_data = data.copy()
-        
-        # Apply transformation to x, y coordinates (z remains unchanged)
-        for frame_idx in range(data.shape[0]):
-            for landmark_idx in range(0, data.shape[1], 3):
-                if landmark_idx + 1 < data.shape[1]:
-                    xyz = data[frame_idx, landmark_idx:landmark_idx+3]
-                    # Apply perspective transformation to x, y
-                    xy_homogeneous = np.array([xyz[0], xyz[1], 1])
-                    transformed_xy = np.dot(perspective_matrix, xy_homogeneous)
-                    transformed_data[frame_idx, landmark_idx:landmark_idx+2] = transformed_xy[:2]
-        
-        return transformed_data
-    
-    def mixup_augmentation(self, data1, data2, alpha=0.2):
-        """Mixup augmentation between two sequences."""
-        # Ensure same length
-        min_length = min(data1.shape[0], data2.shape[0])
-        data1 = data1[:min_length]
-        data2 = data2[:min_length]
-        
-        # Create mixing weight
-        lam = self.rng.beta(alpha, alpha)
-        
-        # Mix the sequences
-        mixed_data = lam * data1 + (1 - lam) * data2
-        
-        return mixed_data
-    
-    def augment_sequence(self, data, metadata=None):
-        """Apply a combination of augmentations to a sequence."""
-        augmented_sequences = []
-        augmentation_types = []
-        
-        for i in range(self.augmentation_factor):
-            augmented_data = data.copy()
-            applied_augmentations = []
+        for frame_idx in range(landmarks.shape[0]):
+            frame_landmarks = landmarks[frame_idx]
+            pose_landmarks = frame_landmarks[pose_start:pose_end].reshape(-1, 4)
             
-            # Apply random combination of augmentations
-            if self.rng.random() > 0.3:
-                augmented_data = self.add_gaussian_noise(augmented_data)
-                applied_augmentations.append('gaussian_noise')
+            # Apply transformations to x, y coordinates (keep z and visibility)
+            x_coords = pose_landmarks[:, 0]
+            y_coords = pose_landmarks[:, 1]
             
-            if self.rng.random() > 0.4:
-                augmented_data = self.add_temporal_noise(augmented_data)
-                applied_augmentations.append('temporal_noise')
+            # Rotation
+            x_rot = x_coords * np.cos(angle_rad) - y_coords * np.sin(angle_rad)
+            y_rot = x_coords * np.sin(angle_rad) + y_coords * np.cos(angle_rad)
             
-            if self.rng.random() > 0.5:
-                augmented_data = self.scale_landmarks(augmented_data)
-                applied_augmentations.append('scale')
+            # Scaling
+            x_scaled = x_rot * scale_x
+            y_scaled = y_rot * scale_y
             
-            if self.rng.random() > 0.5:
-                augmented_data = self.translate_landmarks(augmented_data)
-                applied_augmentations.append('translate')
+            # Translation
+            x_final = x_scaled + tx
+            y_final = y_scaled + ty
             
-            if self.rng.random() > 0.6:
-                augmented_data = self.rotate_landmarks(augmented_data)
-                applied_augmentations.append('rotate')
+            # Update landmarks
+            pose_landmarks[:, 0] = x_final
+            pose_landmarks[:, 1] = y_final
             
-            if self.rng.random() > 0.7:
-                augmented_data = self.temporal_warping(augmented_data)
-                applied_augmentations.append('temporal_warp')
+            # Apply same transformations to face landmarks (next 468*3 values)
+            face_start = pose_end
+            face_end = face_start + 468 * 3
             
-            if self.rng.random() > 0.8:
-                augmented_data = self.partial_occlusion(augmented_data)
-                applied_augmentations.append('occlusion')
+            face_landmarks = frame_landmarks[face_start:face_end].reshape(-1, 3)
+            x_coords = face_landmarks[:, 0]
+            y_coords = face_landmarks[:, 1]
             
-            if self.rng.random() > 0.8:
-                augmented_data = self.perspective_transform(augmented_data)
-                applied_augmentations.append('perspective')
+            x_rot = x_coords * np.cos(angle_rad) - y_coords * np.sin(angle_rad)
+            y_rot = x_coords * np.sin(angle_rad) + y_coords * np.cos(angle_rad)
+            x_scaled = x_rot * scale_x
+            y_scaled = y_rot * scale_y
+            x_final = x_scaled + tx
+            y_final = y_scaled + ty
             
-            augmented_sequences.append(augmented_data)
-            augmentation_types.append(applied_augmentations)
-        
-        return augmented_sequences, augmentation_types
-    
-    def augment_dataset(self, input_dir, output_dir):
-        """Augment all sequences in a directory."""
-        logger.info(f"Starting augmentation from {input_dir} to {output_dir}")
-        
-        # Create output directory
-        os.makedirs(output_dir, exist_ok=True)
-        
-        total_original = 0
-        total_augmented = 0
-        
-        # Process each sign directory
-        for sign_name in os.listdir(input_dir):
-            sign_dir = os.path.join(input_dir, sign_name)
-            if not os.path.isdir(sign_dir):
-                continue
+            face_landmarks[:, 0] = x_final
+            face_landmarks[:, 1] = y_final
             
-            output_sign_dir = os.path.join(output_dir, sign_name)
-            os.makedirs(output_sign_dir, exist_ok=True)
+            # Apply to hand landmarks
+            lh_start = face_end
+            lh_end = lh_start + 21 * 3
+            rh_start = lh_end
+            rh_end = rh_start + 21 * 3
             
-            logger.info(f"Augmenting sign: {sign_name}")
-            
-            # Get all landmark files for this sign
-            landmark_files = [f for f in os.listdir(sign_dir) if f.endswith('_landmarks.npy')]
-            
-            for landmark_file in landmark_files:
-                landmark_path = os.path.join(sign_dir, landmark_file)
-                metadata_path = landmark_path.replace('_landmarks.npy', '_metadata.json')
+            for hand_start, hand_end in [(lh_start, lh_end), (rh_start, rh_end)]:
+                hand_landmarks = frame_landmarks[hand_start:hand_end].reshape(-1, 3)
+                x_coords = hand_landmarks[:, 0]
+                y_coords = hand_landmarks[:, 1]
                 
-                # Load original data
-                original_data = np.load(landmark_path)
-                total_original += 1
+                x_rot = x_coords * np.cos(angle_rad) - y_coords * np.sin(angle_rad)
+                y_rot = x_coords * np.sin(angle_rad) + y_coords * np.cos(angle_rad)
+                x_scaled = x_rot * scale_x
+                y_scaled = y_rot * scale_y
+                x_final = x_scaled + tx
+                y_final = y_scaled + ty
                 
-                # Load metadata if available
-                metadata = None
-                if os.path.exists(metadata_path):
-                    with open(metadata_path, 'r', encoding='utf-8') as f:
-                        metadata = json.load(f)
-                
-                # Save original data
-                original_output_path = os.path.join(output_sign_dir, landmark_file)
-                np.save(original_output_path, original_data)
-                
-                if metadata:
-                    original_metadata_path = os.path.join(output_sign_dir, 
-                                                        landmark_file.replace('_landmarks.npy', '_metadata.json'))
-                    with open(original_metadata_path, 'w', encoding='utf-8') as f:
-                        json.dump(metadata, f, indent=2, ensure_ascii=False)
-                
-                # Generate augmented versions
-                augmented_sequences, augmentation_types = self.augment_sequence(original_data, metadata)
-                
-                base_name = landmark_file.replace('_landmarks.npy', '')
-                
-                for i, (augmented_data, aug_types) in enumerate(zip(augmented_sequences, augmentation_types)):
-                    # Create augmented filename
-                    aug_filename = f"{base_name}_aug_{i+1:03d}.npy"
-                    aug_path = os.path.join(output_sign_dir, aug_filename)
-                    
-                    # Save augmented data
-                    np.save(aug_path, augmented_data)
-                    
-                    # Save augmentation metadata
-                    aug_metadata = {
-                        'original_file': landmark_file,
-                        'augmentation_types': aug_types,
-                        'augmentation_index': i + 1,
-                        'original_metadata': metadata
-                    }
-                    
-                    aug_metadata_path = aug_path.replace('_landmarks.npy', '_metadata.json')
-                    with open(aug_metadata_path, 'w', encoding='utf-8') as f:
-                        json.dump(aug_metadata, f, indent=2, ensure_ascii=False)
-                    
-                    total_augmented += 1
+                hand_landmarks[:, 0] = x_final
+                hand_landmarks[:, 1] = y_final
+            
+            # Reconstruct frame
+            aug_landmarks[frame_idx] = frame_landmarks
         
-        logger.info(f"Augmentation complete!")
-        logger.info(f"Original samples: {total_original}")
-        logger.info(f"Augmented samples: {total_augmented}")
-        logger.info(f"Total samples: {total_original + total_augmented}")
+        aug_metadata = metadata.copy()
+        aug_metadata['spatial_transform'] = {
+            'rotation_angle': angle,
+            'scale_x': scale_x,
+            'scale_y': scale_y,
+            'translation_x': tx,
+            'translation_y': ty
+        }
+        
+        return aug_landmarks, aug_metadata
+    
+    def _temporal_augmentation(self, landmarks: np.ndarray, metadata: Dict[str, Any]) -> Tuple[np.ndarray, Dict[str, Any]]:
+        """Apply temporal transformations (speed variation, frame dropping)."""
+        num_frames = landmarks.shape[0]
+        
+        if num_frames < 10:  # Too short for temporal augmentation
+            return landmarks.copy(), metadata.copy()
+        
+        # Random speed variation
+        speed_factor = random.uniform(0.8, 1.2)
+        
+        # Calculate new frame indices
+        new_num_frames = int(num_frames * speed_factor)
+        new_indices = np.linspace(0, num_frames - 1, new_num_frames, dtype=int)
+        
+        # Interpolate landmarks
+        aug_landmarks = landmarks[new_indices]
+        
+        # Random frame dropping (drop 0-20% of frames)
+        drop_ratio = random.uniform(0, 0.2)
+        num_to_drop = int(new_num_frames * drop_ratio)
+        
+        if num_to_drop > 0:
+            drop_indices = random.sample(range(new_num_frames), num_to_drop)
+            keep_indices = [i for i in range(new_num_frames) if i not in drop_indices]
+            aug_landmarks = aug_landmarks[keep_indices]
+        
+        aug_metadata = metadata.copy()
+        aug_metadata['temporal_transform'] = {
+            'speed_factor': speed_factor,
+            'original_frames': num_frames,
+            'new_frames': aug_landmarks.shape[0],
+            'dropped_frames': num_to_drop
+        }
+        
+        return aug_landmarks, aug_metadata
+    
+    def _occlusion_augmentation(self, landmarks: np.ndarray, metadata: Dict[str, Any]) -> Tuple[np.ndarray, Dict[str, Any]]:
+        """Apply occlusion simulation by zeroing out random landmarks."""
+        aug_landmarks = landmarks.copy()
+        
+        # Define landmark groups
+        pose_start, pose_end = 0, 33 * 4
+        face_start, face_end = pose_end, pose_end + 468 * 3
+        lh_start, lh_end = face_end, face_end + 21 * 3
+        rh_start, rh_end = lh_end, lh_end + 21 * 3
+        
+        # Randomly choose which group to occlude
+        groups = ['pose', 'face', 'left_hand', 'right_hand']
+        occlude_group = random.choice(groups)
+        
+        # Random occlusion duration (frames)
+        occlusion_start = random.randint(0, max(0, landmarks.shape[0] - 5))
+        occlusion_duration = random.randint(1, min(5, landmarks.shape[0] - occlusion_start))
+        
+        # Apply occlusion
+        if occlude_group == 'pose':
+            start_idx, end_idx = pose_start, pose_end
+        elif occlude_group == 'face':
+            start_idx, end_idx = face_start, face_end
+        elif occlude_group == 'left_hand':
+            start_idx, end_idx = lh_start, lh_end
+        else:  # right_hand
+            start_idx, end_idx = rh_start, rh_end
+        
+        for frame_idx in range(occlusion_start, occlusion_start + occlusion_duration):
+            if frame_idx < landmarks.shape[0]:
+                aug_landmarks[frame_idx, start_idx:end_idx] = 0
+        
+        aug_metadata = metadata.copy()
+        aug_metadata['occlusion'] = {
+            'occluded_group': occlude_group,
+            'start_frame': occlusion_start,
+            'duration': occlusion_duration
+        }
+        
+        return aug_landmarks, aug_metadata
+    
+    def _perspective_augmentation(self, landmarks: np.ndarray, metadata: Dict[str, Any]) -> Tuple[np.ndarray, Dict[str, Any]]:
+        """Apply perspective transformations (viewpoint changes)."""
+        aug_landmarks = landmarks.copy()
+        
+        # Random perspective parameters
+        perspective_strength = random.uniform(0.1, 0.3)
+        
+        # Apply perspective transformation to x coordinates
+        for frame_idx in range(landmarks.shape[0]):
+            frame_landmarks = landmarks[frame_idx]
+            
+            # Apply to all landmark groups
+            for group_start, group_end in [(0, 33*4), (33*4, 33*4+468*3), (33*4+468*3, 33*4+468*3+21*3), (33*4+468*3+21*3, 33*4+468*3+21*3+21*3)]:
+                group_landmarks = frame_landmarks[group_start:group_end]
+                
+                # Reshape based on group
+                if group_start == 0:  # pose
+                    landmarks_reshaped = group_landmarks.reshape(-1, 4)
+                    coords = landmarks_reshaped[:, :3]  # x, y, z
+                else:  # face, hands
+                    landmarks_reshaped = group_landmarks.reshape(-1, 3)
+                    coords = landmarks_reshaped
+                
+                # Apply perspective transformation
+                x_coords = coords[:, 0]
+                y_coords = coords[:, 1]
+                
+                # Simple perspective effect
+                perspective_factor = 1 + perspective_strength * (y_coords - 0.5)
+                x_perspective = x_coords * perspective_factor
+                
+                # Update coordinates
+                coords[:, 0] = x_perspective
+                
+                # Reconstruct group
+                if group_start == 0:  # pose
+                    landmarks_reshaped[:, :3] = coords
+                    group_landmarks = landmarks_reshaped.flatten()
+                else:  # face, hands
+                    landmarks_reshaped = coords
+                    group_landmarks = landmarks_reshaped.flatten()
+                
+                aug_landmarks[frame_idx, group_start:group_end] = group_landmarks
+        
+        aug_metadata = metadata.copy()
+        aug_metadata['perspective'] = {
+            'perspective_strength': perspective_strength
+        }
+        
+        return aug_landmarks, aug_metadata
+    
+    def _mixup_augmentation(self, landmarks: np.ndarray, metadata: Dict[str, Any]) -> Tuple[np.ndarray, Dict[str, Any]]:
+        """Apply mixup augmentation by blending with a slightly modified version."""
+        # Create a slightly modified version
+        modified = landmarks.copy()
+        
+        # Add small random noise
+        noise_std = 0.01
+        noise = np.random.normal(0, noise_std, landmarks.shape)
+        modified += noise
+        
+        # Mixup factor
+        alpha = random.uniform(0.3, 0.7)
+        
+        # Blend the original and modified versions
+        aug_landmarks = alpha * landmarks + (1 - alpha) * modified
+        
+        aug_metadata = metadata.copy()
+        aug_metadata['mixup'] = {
+            'alpha': alpha,
+            'noise_std': noise_std
+        }
+        
+        return aug_landmarks, aug_metadata
+
+def augment_train_dataset(train_path: str, augmentation_factor: int = 5):
+    """Augment the entire train dataset."""
+    logger.info(f"=== DÉBUT Augmentation du dataset train ({train_path}) ===")
+    
+    augmenter = AdvancedAugmenter(augmentation_factor=augmentation_factor)
+    
+    # Walk through train directory
+    total_original = 0
+    total_augmented = 0
+    
+    for sign_folder in os.listdir(train_path):
+        sign_path = os.path.join(train_path, sign_folder)
+        if not os.path.isdir(sign_path):
+            continue
+        
+        logger.info(f"--- Signe : {sign_folder} ---")
+        
+        # Find all landmark files for this sign
+        landmark_files = [f for f in os.listdir(sign_path) if f.endswith('.npy') and not f.endswith('_metadata.json')]
+        
+        for landmark_file in landmark_files:
+            logger.info(f"Augmentation du fichier : {landmark_file}")
+            source_name = landmark_file.replace('.npy', '')
+            landmark_path = os.path.join(sign_path, landmark_file)
+            metadata_path = os.path.join(sign_path, f"{source_name}_metadata.json")
+            
+            # Load landmarks and metadata
+            landmarks = np.load(landmark_path)
+            
+            if os.path.exists(metadata_path):
+                with open(metadata_path, 'r', encoding='utf-8') as f:
+                    metadata = json.load(f)
+            else:
+                metadata = {'video_path': 'unknown'}
+            
+            # Generate augmented versions
+            augmented_samples = augmenter.augment_landmarks(landmarks, metadata)
+            
+            # Save augmented versions
+            for i, (aug_landmarks, aug_metadata) in enumerate(augmented_samples):
+                if i == 0:  # Original sample
+                    continue
+                
+                # Create augmented filename
+                aug_filename = f"{source_name}_aug_{i:03d}.npy"
+                aug_metadata_filename = f"{source_name}_aug_{i:03d}_metadata.json"
+                
+                aug_landmark_path = os.path.join(sign_path, aug_filename)
+                aug_metadata_path = os.path.join(sign_path, aug_metadata_filename)
+                
+                # Save augmented data
+                np.save(aug_landmark_path, aug_landmarks)
+                with open(aug_metadata_path, 'w', encoding='utf-8') as f:
+                    json.dump(aug_metadata, f, indent=2, ensure_ascii=False)
+                
+                total_augmented += 1
+            
+            total_original += 1
+    
+    logger.info(f"=== FIN Augmentation : {total_original} originaux, {total_augmented} augmentés ===")
 
 def main():
-    """Main function to run advanced augmentation."""
+    """Main function to augment the train dataset."""
+    logger.info("=== Lancement de l'augmentation avancée ===")
     script_path = os.path.abspath(__file__)
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_path)))
     data_path = os.path.join(project_root, 'data')
+    train_path = os.path.join(data_path, 'train')
     
-    # Define paths
-    train_dir = os.path.join(data_path, 'train')
-    augmented_train_dir = os.path.join(data_path, 'train_augmented')
+    # Check if train directory exists
+    if not os.path.exists(train_path):
+        logger.error(f"Train directory not found: {train_path}")
+        logger.error("Please run the consolidation script first.")
+        return
     
-    # Initialize augmenter
-    augmenter = AdvancedAugmenter(augmentation_factor=15)  # 15 augmented versions per original
-    
-    # Run augmentation
-    augmenter.augment_dataset(train_dir, augmented_train_dir)
+    # Augment train dataset
+    augment_train_dataset(train_path, augmentation_factor=5)
+    logger.info("=== Fin de l'augmentation avancée ===")
 
 if __name__ == '__main__':
     main() 
