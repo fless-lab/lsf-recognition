@@ -159,6 +159,20 @@ def main():
     # Dictionary to track sign sources
     sign_sources = {}
     
+    # Compter le nombre total de vidéos à traiter (toutes sources confondues)
+    all_video_files = []
+    for source in sources:
+        source_path = os.path.join(raw_path, source)
+        if not os.path.exists(source_path):
+            continue
+        for root, dirs, files in os.walk(source_path):
+            for file in files:
+                if file.endswith(('.webm', '.mp4', '.avi', '.mov')):
+                    all_video_files.append((source, os.path.join(root, file)))
+    total_videos = len(all_video_files)
+    logger.info(f"Nombre total de vidéos à traiter : {total_videos}")
+
+    current_idx = 0
     for source in sources:
         logger.info(f"--- Source : {source} ---")
         source_path = os.path.join(raw_path, source)
@@ -167,63 +181,60 @@ def main():
             continue
 
         logger.info(f"Processing source: {source}")
-        
         # Get all video files in this source
         video_files = []
         for root, dirs, files in os.walk(source_path):
             for file in files:
                 if file.endswith(('.webm', '.mp4', '.avi', '.mov')):
                     video_files.append(os.path.join(root, file))
-        
+
         logger.info(f"Found {len(video_files)} video files in {source}")
-        
+
         for video_path in video_files:
-            logger.info(f"Traitement du signe : {os.path.basename(video_path)}")
-            # Extract sign name from path
+            current_idx += 1
             sign_name = os.path.splitext(os.path.basename(video_path))[0]
-            
-            # Extract source name (e.g., 'jauvert' from 'parlr/jauvert')
             source_name = source.split('/')[-1]
-            
+            logger.info(f"Traitement de la vidéo {current_idx}/{total_videos} : {sign_name} ({source_name})")
+
             # Create output directory: processed/{sign_name}/
             output_dir = os.path.join(processed_path, sign_name)
             os.makedirs(output_dir, exist_ok=True)
-            
+
             # Create output filenames: {source_name}.npy
             landmarks_file = os.path.join(output_dir, f"{source_name}.npy")
             metadata_file = os.path.join(output_dir, f"{source_name}_metadata.json")
-            
+
             # Track sign sources for later analysis
             if sign_name not in sign_sources:
                 sign_sources[sign_name] = []
             if source_name not in sign_sources[sign_name]:
                 sign_sources[sign_name].append(source_name)
-            
+
             # Skip if already processed
             if os.path.exists(landmarks_file) and os.path.exists(metadata_file):
                 logger.info(f"Skipping {sign_name} from {source_name}, already processed.")
                 continue
-            
+
             try:
                 logger.info(f"Extraction : {sign_name} depuis {source_name}")
                 # Extract landmarks and metadata
                 landmarks, metadata = extractor.process_video(video_path)
-                
+
                 if landmarks is not None and metadata is not None:
                     logger.info(f"Sauvegarde des landmarks et métadonnées pour {sign_name} ({source_name})")
                     # Save landmarks
                     np.save(landmarks_file, landmarks)
-                    
+
                     # Save metadata
                     with open(metadata_file, 'w', encoding='utf-8') as f:
                         json.dump(metadata, f, indent=2, ensure_ascii=False)
-                    
+
                     total_processed += 1
-                    logger.info(f"Successfully processed {sign_name} from {source_name} - {landmarks.shape[0]} frames")
+                    logger.info(f"✅ Vidéo {current_idx}/{total_videos} traitée : {sign_name} ({source_name}) - {landmarks.shape[0]} frames")
                 else:
                     total_errors += 1
-                    logger.error(f"Failed to extract landmarks from {sign_name} from {source_name}")
-                    
+                    logger.error(f"❌ Extraction échouée pour {sign_name} ({source_name})")
+
             except Exception as e:
                 total_errors += 1
                 logger.error(f"Erreur lors du traitement de {sign_name} ({source_name}) : {str(e)}")
