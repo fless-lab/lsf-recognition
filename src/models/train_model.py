@@ -57,8 +57,10 @@ def main():
     print("Building model...")
     model = Sequential([
         Masking(mask_value=0., input_shape=(max_len, X_train.shape[2])),
-        LSTM(64, return_sequences=True, activation='tanh'),
-        LSTM(64, return_sequences=False, activation='tanh'),
+        LSTM(64, return_sequences=True, activation='relu'),
+        LSTM(128, return_sequences=True, activation='relu'),
+        LSTM(64, return_sequences=False, activation='relu'),
+        Dense(64, activation='relu'),
         Dense(32, activation='relu'),
         Dense(len(train_labels), activation='softmax')
     ])
@@ -69,11 +71,11 @@ def main():
     # Callbacks
     tensorboard_callback = TensorBoard(log_dir=log_path)
     checkpoint_path = os.path.join(models_path, 'lsf_recognition_model.keras')
-    model_checkpoint = ModelCheckpoint(checkpoint_path, save_best_only=True, monitor='val_loss', mode='min')
+    model_checkpoint = ModelCheckpoint(checkpoint_path, save_best_only=True, monitor='val_categorical_accuracy', mode='max')
 
     # Train model
     print("Training model...")
-    model.fit(X_train, y_train_categorical, epochs=50, 
+    model.fit(X_train, y_train_categorical, epochs=100, 
               validation_data=(X_val, y_val_categorical), 
               callbacks=[tensorboard_callback, model_checkpoint])
 
