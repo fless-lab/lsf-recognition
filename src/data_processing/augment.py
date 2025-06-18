@@ -13,10 +13,10 @@ from typing import List, Tuple, Dict, Any
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-class AdvancedAugmenter:
+class DataAugmenter:
     def __init__(self, augmentation_factor=5):
-        """Initialize the advanced augmenter with multiple augmentation techniques."""
-        logger.info(f"Initialisation de l'augmentateur avancé (factor={augmentation_factor})")
+        """Initialize the augmenter with multiple augmentation techniques."""
+        logger.info(f"Initialisation de l'augmentateur de données (factor={augmentation_factor})")
         self.augmentation_factor = augmentation_factor
         
     def augment_landmarks(self, landmarks: np.ndarray, metadata: Dict[str, Any]) -> List[Tuple[np.ndarray, Dict[str, Any]]]:
@@ -307,7 +307,7 @@ def augment_train_dataset(train_path: str, augmentation_factor: int = 5):
     """Augment the entire train dataset."""
     logger.info(f"=== DÉBUT Augmentation du dataset train ({train_path}) ===")
     
-    augmenter = AdvancedAugmenter(augmentation_factor=augmentation_factor)
+    augmenter = DataAugmenter(augmentation_factor=augmentation_factor)
     
     # Walk through train directory
     total_original = 0
@@ -366,7 +366,7 @@ def augment_train_dataset(train_path: str, augmentation_factor: int = 5):
 
 def main():
     """Main function to augment the train dataset."""
-    logger.info("=== Lancement de l'augmentation avancée ===")
+    logger.info("=== Lancement de l'augmentation ===")
     script_path = os.path.abspath(__file__)
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_path)))
     data_path = os.path.join(project_root, 'data')
@@ -380,7 +380,7 @@ def main():
     
     # Augment train dataset
     augment_train_dataset(train_path, augmentation_factor=5)
-    logger.info("=== Fin de l'augmentation avancée ===")
+    logger.info("=== Fin de l'augmentation ===")
 
 if __name__ == '__main__':
     main() 

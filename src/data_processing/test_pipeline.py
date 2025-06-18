@@ -14,6 +14,9 @@ import numpy as np
 import json
 import logging
 from pathlib import Path
+from extract_landmarks import LandmarkExtractor
+from consolidate import DatasetConsolidator
+from augment import DataAugmenter
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -23,8 +26,7 @@ def create_test_video(output_path, duration=2, fps=30):
     """Create a simple test video for testing."""
     try:
         import cv2
-        
-        # Create a simple video with moving shapes
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
         fourcc = cv2.VideoWriter_fourcc(*"mp4v")
         logger.info(f"Création d'une vidéo de test : {output_path}")
         out = cv2.VideoWriter(output_path, fourcc, fps, (640, 480))
@@ -64,9 +66,6 @@ def test_landmark_extraction():
     logger.info("🧪 Testing landmark extraction...")
     
     try:
-        # Import the extraction module
-        from extract_landmarks_advanced import LandmarkExtractor
-        
         # Create a test extractor
         extractor = LandmarkExtractor(min_detection_confidence=0.5, min_tracking_confidence=0.5)
         
@@ -121,8 +120,6 @@ def test_augmentation():
     logger.info("🧪 Testing data augmentation...")
     
     try:
-        from augment_advanced import AdvancedAugmenter
-        
         # Create test landmarks
         num_frames = 30
         num_landmarks = 1662  # Total landmarks (pose + face + hands)
@@ -140,7 +137,7 @@ def test_augmentation():
         }
         
         # Test augmenter
-        augmenter = AdvancedAugmenter(augmentation_factor=3)
+        augmenter = DataAugmenter(augmentation_factor=3)
         augmented_samples = augmenter.augment_landmarks(test_landmarks, test_metadata)
         
         if len(augmented_samples) == 3:  # Original + 2 augmented
@@ -172,8 +169,6 @@ def test_consolidation():
     logger.info("🧪 Testing consolidation...")
     
     try:
-        from consolidate_advanced import DatasetConsolidator
-        
         # Create temporary test data
         with tempfile.TemporaryDirectory() as temp_dir:
             processed_dir = os.path.join(temp_dir, 'processed')

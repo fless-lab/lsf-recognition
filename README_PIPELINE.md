@@ -33,9 +33,9 @@ lsf-recognition/
 │   └── corpus.txt                    # Liste des signes
 ├── src/
 │   └── data_processing/
-│       ├── extract_landmarks_advanced.py
-│       ├── consolidate_advanced.py
-│       ├── augment_advanced.py
+│       ├── extract_landmarks.py
+│       ├── consolidate.py
+│       ├── augment.py
 │       ├── visualize_landmarks.py
 │       └── run_pipeline.py
 └── visualizations/                   # Visualisations générées
@@ -83,7 +83,7 @@ python src/data_processing/visualize_landmarks.py --data-path train --sign-name 
 
 ## 🔧 Étapes du Pipeline
 
-### 1. Extraction des Landmarks (`extract_landmarks_advanced.py`)
+### 1. Extraction des Landmarks (`extract_landmarks.py`)
 
 **Objectif** : Extraire les landmarks 3D de chaque vidéo
 
@@ -104,7 +104,7 @@ python src/data_processing/visualize_landmarks.py --data-path train --sign-name 
 # Total: 33*4 + 468*3 + 21*3 + 21*3 = 1662 dimensions
 ```
 
-### 2. Consolidation et Splits (`consolidate_advanced.py`)
+### 2. Consolidation et Splits (`consolidate.py`)
 
 **Objectif** : Créer les splits train/val/test avec séparation par source
 
@@ -120,7 +120,7 @@ python src/data_processing/visualize_landmarks.py --data-path train --sign-name 
 - Test sur sources non vues pendant l'entraînement
 - Évaluation plus réaliste de la généralisation
 
-### 3. Augmentation des Données (`augment_advanced.py`)
+### 3. Augmentation des Données (`augment.py`)
 
 **Objectif** : Générer des versions augmentées pour l'entraînement
 
@@ -192,7 +192,7 @@ python src/data_processing/visualize_landmarks.py \
 
 ### Paramètres d'extraction
 ```python
-# Dans extract_landmarks_advanced.py
+# Dans extract_landmarks.py
 min_detection_confidence = 0.5
 min_tracking_confidence = 0.5
 model_complexity = 1  # 0, 1, ou 2
@@ -200,13 +200,13 @@ model_complexity = 1  # 0, 1, ou 2
 
 ### Paramètres de consolidation
 ```python
-# Dans consolidate_advanced.py
+# Dans consolidate.py
 min_confidence = 0.3  # Seuil de qualité minimum
 ```
 
 ### Paramètres d'augmentation
 ```python
-# Dans augment_advanced.py
+# Dans augment.py
 augmentation_factor = 5  # Nombre de versions augmentées
 ```
 

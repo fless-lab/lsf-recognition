@@ -247,17 +247,4 @@ def main():
         'val_signs': val_signs,
         'test_signs': test_signs,
         'total_signs': len(corpus_signs)
-    }
-    split_stats_file = os.path.join(data_path, 'split_statistics.json')
-    with open(split_stats_file, 'w', encoding='utf-8') as f:
-        json.dump(split_stats, f, indent=2, ensure_ascii=False)
-    
-    logger.info(f"Consolidation complete!")
-    logger.info(f"Corpus saved to: {corpus_file}")
-    logger.info(f"Quality metrics saved to: {metrics_file}")
-    logger.info(f"Split assignments saved to: {splits_file}")
-    logger.info(f"Split statistics saved to: {split_stats_file}")
-    logger.info("=== FIN Consolidation & split ===")
-
-if __name__ == '__main__':
-    main() 
+    } 

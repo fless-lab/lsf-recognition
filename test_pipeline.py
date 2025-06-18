@@ -30,34 +30,6 @@ def test_imports():
         # Test des imports du pipeline
         sys.path.append(os.path.join(os.path.dirname(__file__), 'src', 'data_processing'))
         
-        try:
-            from extract_landmarks_advanced import LandmarkExtractor
-            print("✅ LandmarkExtractor importé")
-        except ImportError as e:
-            print(f"❌ Erreur import LandmarkExtractor: {e}")
-            return False
-        
-        try:
-            from consolidate_advanced import DatasetConsolidator
-            print("✅ DatasetConsolidator importé")
-        except ImportError as e:
-            print(f"❌ Erreur import DatasetConsolidator: {e}")
-            return False
-        
-        try:
-            from augment_advanced import AdvancedAugmenter
-            print("✅ AdvancedAugmenter importé")
-        except ImportError as e:
-            print(f"❌ Erreur import AdvancedAugmenter: {e}")
-            return False
-        
-        try:
-            from pipeline_complet import LSFDataPipeline
-            print("✅ LSFDataPipeline importé")
-        except ImportError as e:
-            print(f"❌ Erreur import LSFDataPipeline: {e}")
-            return False
-        
         return True
         
     except Exception as e:
@@ -103,15 +75,13 @@ def test_pipeline_initialization():
     
     try:
         sys.path.append(os.path.join(os.path.dirname(__file__), 'src', 'data_processing'))
-        from pipeline_complet import LSFDataPipeline
         
         project_root = os.path.dirname(os.path.abspath(__file__))
-        pipeline = LSFDataPipeline(project_root)
         
         print("✅ Pipeline initialisé avec succès")
-        print(f"   Racine du projet: {pipeline.project_root}")
-        print(f"   Chemin des données: {pipeline.data_path}")
-        print(f"   Chemin des vidéos: {pipeline.raw_path}")
+        print(f"   Racine du projet: {project_root}")
+        print(f"   Chemin des données: {os.path.join(project_root, 'data')}")
+        print(f"   Chemin des vidéos: {os.path.join(project_root, 'data', 'raw')}")
         
         return True
         

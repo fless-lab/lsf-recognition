@@ -116,9 +116,9 @@ def main():
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_path)))
     scripts_dir = os.path.join(project_root, 'src', 'data_processing')
     
-    extraction_script = os.path.join(scripts_dir, 'extract_landmarks_advanced.py')
-    consolidation_script = os.path.join(scripts_dir, 'consolidate_advanced.py')
-    augmentation_script = os.path.join(scripts_dir, 'augment_advanced.py')
+    extraction_script = os.path.join(scripts_dir, 'extract_landmarks.py')
+    consolidation_script = os.path.join(scripts_dir, 'consolidate.py')
+    augmentation_script = os.path.join(scripts_dir, 'augment.py')
     
     # Check prerequisites
     if not check_prerequisites():

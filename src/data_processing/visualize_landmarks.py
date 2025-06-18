@@ -94,7 +94,9 @@ class LandmarkVisualizer:
     
     def create_animation(self, landmarks, output_path, fps=10):
         """Create a video animation of landmarks over time."""
-        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+        import cv2
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         logger.info(f"Création de l'animation vidéo : {output_path}")
         out = cv2.VideoWriter(output_path, fourcc, fps, (640, 480))
         
@@ -163,8 +165,12 @@ class LandmarkVisualizer:
     def compare_original_vs_augmented(self, original_path, augmented_path, output_dir):
         """Compare original and augmented landmarks."""
         import cv2
-        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-        logger.info(f"Création de la comparaison vidéo : {output_dir}")
+        os.makedirs(output_dir, exist_ok=True)
+        comparison_path = os.path.join(output_dir, 'comparison.mp4')
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        logger.info(f"Création de la comparaison vidéo : {comparison_path}")
+        out = cv2.VideoWriter(comparison_path, fourcc, 10, (1280, 480))
+        
         # Load data
         original_landmarks = self.load_landmarks(original_path)
         augmented_landmarks = self.load_landmarks(augmented_path)
@@ -178,8 +184,6 @@ class LandmarkVisualizer:
         # Create comparison animation
         max_frames = min(original_landmarks.shape[0], augmented_landmarks.shape[0])
         
-        out = cv2.VideoWriter(output_dir, fourcc, 10, (1280, 480))
-        
         for frame_idx in range(max_frames):
             # Create side-by-side comparison
             original_img = self.visualize_frame(original_landmarks, frame_idx, "Original")
@@ -190,7 +194,7 @@ class LandmarkVisualizer:
                 out.write(combined)
         
         out.release()
-        logger.info(f"Comparison video saved to: {output_dir}")
+        logger.info(f"Comparison video saved to: {comparison_path}")
         
         # Plot confidence comparison
         if original_metadata and augmented_metadata:
