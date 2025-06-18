@@ -41,8 +41,13 @@ def main():
     X_test_raw, y_test_raw, _ = load_data_from_directory(os.path.join(data_path, 'test'))
 
     # Encode labels
+    corpus_path = os.path.join(project_root, 'data', 'nlp', 'corpus.txt')
+    with open(corpus_path, 'r', encoding='utf-8') as f:
+        all_labels = [line.strip() for line in f.readlines()]
+
+    # Encode labels
     label_encoder = LabelEncoder()
-    label_encoder.fit(train_labels)
+    label_encoder.fit(all_labels) # Fit on all possible labels
     y_test_encoded = label_encoder.transform(y_test_raw)
 
     # Pad sequences to the same length as during training
@@ -62,7 +67,8 @@ def main():
 
     # Print classification report
     print("\nClassification Report:")
-    report = classification_report(y_test_encoded, y_pred_classes, target_names=label_encoder.classes_, zero_division=0)
+    num_classes = len(label_encoder.classes_)
+    report = classification_report(y_test_encoded, y_pred_classes, labels=np.arange(num_classes), target_names=label_encoder.classes_, zero_division=0)
     print(report)
 
     # Plot confusion matrix
