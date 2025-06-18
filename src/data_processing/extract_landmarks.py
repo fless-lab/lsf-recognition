@@ -5,9 +5,14 @@ import os
 import json
 from pathlib import Path
 import logging
+import sys
 
-# Setup logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# Setup logging : console uniquement pour affichage en temps réel via subprocess
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
 logger = logging.getLogger(__name__)
 
 # Correct MediaPipe imports for linter

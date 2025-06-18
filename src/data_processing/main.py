@@ -1,4 +1,4 @@
- #!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Complete LSF Recognition Data Pipeline
 
@@ -36,22 +36,17 @@ def run_script(script_path, description):
     logger.info(f"Running: {script_path}")
     
     try:
+        # Forward stdout/stderr to parent (console + log)
+        # Ne pas utiliser capture_output pour voir la sortie en temps réel
         result = subprocess.run(
             [sys.executable, script_path],
-            capture_output=True,
-            text=True,
             cwd=os.path.dirname(script_path)
         )
-        
         if result.returncode == 0:
             logger.info(f"✅ Completed: {description}")
-            if result.stdout:
-                logger.info(f"Output: {result.stdout}")
         else:
             logger.error(f"❌ Failed: {description}")
-            logger.error(f"Error: {result.stderr}")
-            return False
-            
+        return result.returncode == 0
     except Exception as e:
         logger.error(f"❌ Exception in {description}: {str(e)}")
         return False
