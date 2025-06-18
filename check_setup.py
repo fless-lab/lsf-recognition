@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+ #!/usr/bin/env python3
 """
 Script de test pour vérifier que le pipeline fonctionne.
 """
