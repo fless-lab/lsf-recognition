@@ -1,0 +1,7603 @@
+{
+  "bonjour": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "école": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "zoo": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "avocat": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "infirmière": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "langue": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "Marseille": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "histoire": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "télévision": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "diplôme": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "éducateur": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "médecin": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "ville": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "exemple": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "terre": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "formation": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "cinéma": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "hôpital": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "expression du visage": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "mairie": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "soigner": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "Paris": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "baptême": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "montagne": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "cousin": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "chemin": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "usine": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "directeur": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "champignon": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "critiquer": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "chance": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "banque": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "embaucher": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "accompagner": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "croissant": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "charpente": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "clown": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "collège": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "homme": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "chapeau": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "couscous": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "dossier": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "intervenir": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "chaussette": {
+    "train": [
+      "elix"
+    ],
+    "test": [
+      "jauvert"
+    ],
+    "val": []
+  },
+  "informer": {
+    "train": [
+      "jauvert"
+    ],
+    "test": [
+      "education-nationale"
+    ],
+    "val": []
+  },
+  "démissionner": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bourgeois": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Grèce": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Écosse": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "concept": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Chine": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mécanique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Europe": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Allemagne": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Laos": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "voir": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "coupable": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mine": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Espagne": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "virus": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Danemark": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "débilité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "roi": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "convoquer": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ingénieur": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Bulgarie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "normal": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "hommage": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Italie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Albi": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "interview": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "connaissance": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Orléans": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Dijon": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "crime": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Finlande": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "caractère": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Israël": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Norvège": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "privé": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Belgique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Lille": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "arts": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Kwatt (kilowatt)": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "URSS": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "comité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Monaco": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "technique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "oral": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "naturel": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "agence": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "assurance": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "français": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "réviser": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "expert": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "social": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "médicament": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "lecture labiale": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pharmacie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Inde": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Metz": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "foie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "autonomie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sous-marin": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "nucléaire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Canada": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "hélicoptère": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "catholique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tomber": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "manger": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Avignon": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "responsable": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "citoyen": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "il y a du vent": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Poitiers": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tours": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "boudin": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bénéfice": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "réseau": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "compétant": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "oie": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Reims": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "communisme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "hémorragie": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "canal": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "maladie": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bobine": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "canicule": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "blouse": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "âme": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "télécommunication": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sortie": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cocon": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pas d'accord": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "soldat": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "circuit": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "au bord de…": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chercher quelqu'un de perdu": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ami·e·s": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "barbelé": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fermé": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "derrière": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bracelet": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "eux": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "envoyer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "communauté": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "à la saint glinglin": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "lit": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Strasbourg": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "achat": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "media": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "photo": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "location": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "entrée": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "argenté": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "appétit": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jaune": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tante": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "caducée": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "laid": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "analogie": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "réseau local": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je ne suis pas là": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bac": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "escargot": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "archipel": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sans interruption": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je n'ai pas le temps": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "roux": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "essayer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "doré": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "blond": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je crois": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "kaki": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "perdre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "thé": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "poule": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "printemps": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "il neige": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ping-pong": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "gris": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "se rappeler": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "théorie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "atome": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "snowboard": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "été": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "retard": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "honte": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "toxique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "étudiant": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jeu de cartes": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "enseigner": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "car": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dialoguer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "livre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "acide": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je n'ai pas vu": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Suède": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pain": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "plusieurs": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "diplomatique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "préféré·e": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "symbole": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "marron": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pomme de terre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vert": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Nîmes": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "électronique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "prénom": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "châtain": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "danser": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "soeur": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "finir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chocolat": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "démocratie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cuisine": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "banane": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "après-midi": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "beige": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bleu": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "entendre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bowling": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "France": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "or": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jeu": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "toi": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "canard": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "loi": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "parent": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mouvement": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "libre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "café": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Lyon": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "restaurant": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Mexique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "couleur": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "droit": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "poème": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "victoire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tard": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "clair": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "habiter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "documentation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "polonais (langue)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cerf": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "électricité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "maman": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "statut social": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pronom": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dilatation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "froid": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bateau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Égypte": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "écrire": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "non-signé": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chat": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mademoiselle": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "moquer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vous": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "lui, elle": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "terminer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "taureau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chien": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bible": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "train": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vibration": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chercher les ennuis": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chercher": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fantasme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Aix": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "antiquité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "horticulture": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "obligation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "patin à glace": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "concurrence": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sélection": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Angers": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Hollande": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "comment ?": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tarif": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "agriculture": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "frère": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "étranger": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "planche à voile": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vent": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jambon": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "moderne": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "information": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Algérie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "courir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jamais": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "microscope": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "physique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "différent": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rose": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "interpréter": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "immeuble": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "français (langue)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "théatre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "culture": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "conférence pour les sourds": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "concombre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pédophile": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "métier": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "patin à roulettes": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "déclaration droits de l'homme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sport": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "capitale": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je ne sais pas": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "niveau": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "commerce": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "toute la nuit": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "village": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "observateur": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "beau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "oumanie (?)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "affaire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "phrase": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "salade": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rôle": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pour": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "expérience": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "blanc": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ski": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "légume": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pause": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bouddhisme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mot": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fils": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "autonome": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "comédien": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sous-titrage": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fenêtre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bus": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "photographie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "analyse": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "lecture": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "roller": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "nager": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dessert": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "adaptation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tortue de terre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Australie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "engrenage": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "adhérer": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "production": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Toulouse": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "faillite": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je peux": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "réveur": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tortue de mer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "palme": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "billard": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "calcul": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "transport": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mouton": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Bruxelles": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "emprunt": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je ne peux pas": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pique-nique": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "boeuf": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Rennes": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "taxe": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cancer": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "trajectoire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "envie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "câble": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "amant": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "abonnement": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "plage": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Internet": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "signaire (vocabulaire LSF)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "à peu près": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "neutre": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "syndicat": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tableau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vélo": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jouer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "communication": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "décompte": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "il n'y a personne": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "décentralisation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Bordeaux": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "justice": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "toujours": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "saucisson": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "biologie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "audiogramme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Brésil": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "centre ville": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mémoire, thèse": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "grand-père": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fruit": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Biarritz": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "qui ?": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Vitrolle": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "papier": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "handicapé": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "grammaire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "se lever": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "décors": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sculpture": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "eau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mal-entendant": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "monde": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cotisation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "souris": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pâte": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cassette": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "liberté": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "écouter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "coca": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "machine": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "envergure (oiseaux)": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "convaincre": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "nombreux": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "timbre": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je ne crois pas": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "campagne": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "email": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "veau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "signé": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "instituteur, professeur": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "planète": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "divorcer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "influence": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je veux": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "capacité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vaincre": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "thème": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "plastique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "problème": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "édifice": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bilan": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Gap": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "objet": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "peur": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fédération": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fonder": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "changer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fille (la)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sandwich": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "gâteau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sourire": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bâtiment": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "recherche": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fier": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "verre de terre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "filet": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rivière": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "psychologue": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "huissier": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "à tout à l'heure": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Mulhouse": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Maroc": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "j'ai le temps": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "griffe": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "souvent": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "militaire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cirque": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "italien (langue)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "beacoup": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "proposition": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "paramètre(s)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "route nationale": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "comment dire ?": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ours": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chocolatine (pain au chocolat)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chimie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "audiovisuel": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "gravure": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "formateur": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Japon": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rat": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "outil": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chéquier": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "poisson": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tartine": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Autriche": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "banquet": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "capter des mots": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je suis d'accord": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sucre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tout": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "demain": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "déclaration": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "montgolfière": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "plonger": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "budget": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "articulation, os": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "oeuf": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "carotte": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "grand-parent": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bibliothèque": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "combien ?": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chaud": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Limoges": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "frite": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vache": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "corps": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pont": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "certificat": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "avec": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tout le monde": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "encéphalogramme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "impôts": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bonsoir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "nous": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "éphémère": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "docteur": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Nancy": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "plombier": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "girafe": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Marignane": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "falsifier": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "compris": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "crayon": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ranger": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vêtement": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "riz": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "libellule": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "moto": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "arbre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "organiser": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "grand-mère": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "canapé": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "orange": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "soleil": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "détail": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "inauguration": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rival": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "programme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "talon": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "orientation": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "iconique": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pleuvoir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dommage": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "apprendre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "présenter, montrer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "où ?": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Bretagne": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "illusion": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ballon": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "se réveiller": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "visite": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "être contre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "casser": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "communiquer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tôt": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "kidnapper": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "association": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "poubelle": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "au revoir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fatigué": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pareil": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "anniversaire": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fraise": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "voiture": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "idéologie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ma, mes": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pas compris": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "herbe": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "adolescent": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je n'aime pas": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "étonner": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "stagiaire": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "conférence pour les entendants": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "élégance": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "automobile, voiture": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je ne connais pas": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "philosophe": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "marier": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vallée": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "géographie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ablation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je suis là": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "photocopie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pour rien": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "avion": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "éclipse": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "content": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "hypnose": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "endoctriner": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "LSF": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rouler": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "boire": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "concours": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "quand ?": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "foot": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ouvert": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "linguistique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "acoustique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "surveiller": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "non": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "neurologique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "apercevoir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "débit banque": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "femme de ménage": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "configuration": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "quoi ?": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fleuve": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "adorer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "lapin": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "taille (mesure)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "j'ai": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dépression": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "construction navale": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "parlé": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "madame": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "petit·e-ami·e": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "licenciement": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "manifestation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cours": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pomme": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "biochimie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "attention": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fille": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "révision": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "journée": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "emplacement": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "j'aime": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "aorte": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bientôt": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "super": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sauf": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fête": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "partir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bureau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pompier": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "maîtresse": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "abandonner": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "amour": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "encore": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "horizon": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "marginal": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "espérer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "séisme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "thermometre": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "drogue": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vocabulaire": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bien": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "objectif": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "emploi du temps": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "carte d'identité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je sais": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sourd": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "décommander": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rester": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "stage": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Aubagne": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "anatomie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "électrotechnique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "garçon": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "oncle": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "entendant": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "concentrer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "minorité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bon": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "député": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pouvoir": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je n'ai pas": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "commencer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dégressif": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "scanner médical": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "acheter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tremblement de terre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jazz": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pardon": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "attendre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "foncé": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "oppression": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "piscine": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "important": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mettre à la porte": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "à bientôt": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "international": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je ne veux pas": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "table": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "notaire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vendre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "concentration": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "à genoux": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "oublier": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "prêt": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "grave": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "gare": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "payer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pas grave": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "s'il vous plait": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "saisons (de l'année)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "travailler": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "soucoupe volante": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mettre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "individu": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "insertion": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "agression": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "abeille": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "conte": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fromage": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "triste": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "méthode": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fêter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chauve-souris": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "silence": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "I love you": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "oui": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "… ou …": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Montpellier": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sens (direction)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "paella": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "gronder": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "radioactif": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "administrer": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "État, pays": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "promenade": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pas content": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "j'ai vu": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "diabète": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "prêter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pas la peine": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fleur": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "arrêter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mutation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "informatique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "boiter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "préférer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "infarctus": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "voler": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "crédit": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tabou": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "se faufiler": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "personne": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "visuel": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "aller": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tous les quinze jours": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "inviter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rembourser": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "approcher": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "porte": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "calendrier": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "humour": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pourquoi ?": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "forêt": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "hiver": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tennis": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "je connais": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "microbe": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "asthme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "répondre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "majeur": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "croiser": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "forme": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tomate": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "petite-fille": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dérogation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "aujourd'hui": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "refuser": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "faxer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "imprimer": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "équilibre": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "imiter, copier": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dire": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "découragement": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chaise": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ambition": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bonne journée": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "adjuger": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "comprendre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "défaut": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "terrible": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "clou": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "offrir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "petit-fils": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "il pleut": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "suivre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rire": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "collaboration": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ça va": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "portable": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "regarder": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "décembre": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "conférence": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bénévolat": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "protéger": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "expliquer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ami·e": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "a priori": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "tachycardie": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "futur": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "téléphone": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rejoindre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "glisser": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "conscience": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "nièce": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "compromis": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "gentil": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "week-end": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "faussaire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "origine": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "seul·e": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "aller chercher": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "enfant": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rencontrer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "voisin": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cloche": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "album de photos": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dialogue": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "trophée": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "clochard": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ambiance": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "merci": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "colonie": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "coco": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "femme": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "messe": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "couronne": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dormir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "clôture": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "comédie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "discuter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "autoroute": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pleurer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "enlèvement": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Irlande": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "banlieue": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ségrégation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "soir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "se promener": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "téléphoner": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chemise": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "participer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "coffre": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "t-shirt": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "message": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "secrétariat": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "midi": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "leader": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "hôtel": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dégustation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rendez-vous": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "serré": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "librairie": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "débat": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "relation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "crocodile": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pull (vêtement)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "film": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sympathique": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "salle": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mensuel": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "donner, rendre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ensemble": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "facture": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "couverture": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "demander": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "conseiller": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "président de la république": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "conversion": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "malade": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "distance": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "château": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "courgette": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "confiance": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "corne": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "célibataire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "exportation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "échange": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "paris": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "marcher": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "grand": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "méchant": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "code de la route": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cornichon": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "couette": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "abbaye": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "examen": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "patron": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cochon": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "comportement": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "collier": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "éclairage": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "colline": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "papa": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mauvais": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "coq": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "se moquer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "contrat": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "candidat": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "manteau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vieu": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "adversaire": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bon appétit": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "schizophrène": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "monsieur": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "saison (de l'année)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "citron": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "hier": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "épilepsie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "avertir, prévenir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "accident de voiture": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "son, sa, ses, leurs": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "expression, mots": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "trimestre": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "il fait beau": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cuir": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "intérioriser": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "musulman": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "hiérarchie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "collant": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "matin": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chariot": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "charcutier": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fabrication": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cordonnier": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "non merci": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "évolution": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "violet": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "neveu": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "devoir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "coton": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "verbe directionnel": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "crochet": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "liaison": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "coquillage": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Km (kilomètre)": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "se taire": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "enseigner, apprendre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "couteau": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "gros": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "après": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "accord": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bordeaux": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Guyane": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "col": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "course": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "petit": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "interrogation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "camion": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "de rien": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "première": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "champ": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bleu marine": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "démonstration": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "enquête": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "crampe": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "enthousiasme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "doctorat en médecine": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "venir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "attestation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "culotte": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dactylologie": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "couvercle": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "croix": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pourquoi": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "kleptomanie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ébéniste": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sac à main": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "département": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "coude": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "divorce": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "devis": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "nouvelle": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "mafia": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vacances": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "champion": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "petits-enfants": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dette": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pâques": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "charbon": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "couche": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "fascisme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "comique": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "typique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "sympathie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "gymnastique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cravate": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "comptabilité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ton, ta, tes": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "couloir": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "décision": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "intelligence": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "de": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "crevette": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "crêpe": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "civil": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "cour": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "restauration": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "nuage": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "appeler": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "maison": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "chaussure": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bébé": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "colère": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "prendre": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "positif": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "montre (accessoire)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "subvention": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "raconter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Kg (kilogramme)": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "invention": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "compétition": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jeunesse": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "rouge": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "coiffure": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "échelon": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "hypocrite": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "crabe": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "élève": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "maintenant": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "délivrance": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "bonne soirée": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "santé": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "s'asseoir": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "kinésithérapie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "musique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "conversation (discuter)": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "haine": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "moral": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "découverte": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "économie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "démenagement": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "culture de la terre": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "proposer": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "avant": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "défenseur": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "famille": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "exploit": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dentiste": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vanité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "ennemi": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "honneur": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "action": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "couple": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "engagement": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "nationalité": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pantalon": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Roumanie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "verglas": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "censure": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "dernière": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jardinage": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "nourriture": {
+    "train": [
+      "elix"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jeune": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Saint-Étienne": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "conflit": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "apporter": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "devant": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "objection": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "pédagogie": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "équipe": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "exercice": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "déficit": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "héritage": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "vaccination": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "félicitation": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "la mode": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "emballage": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Nantes": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "robe": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "politique": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "anonyme": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "jupe": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "enregistrer": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "collant (vêtement)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "Rome": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "officiel": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "école maternelle": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "moi": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  },
+  "doyen": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "base": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "curieux": {
+    "train": [
+      "education-nationale"
+    ],
+    "val": [],
+    "test": []
+  },
+  "short (vêtement)": {
+    "train": [
+      "jauvert"
+    ],
+    "val": [],
+    "test": []
+  }
+}

@@ -38,6 +38,7 @@ def main():
     print("=" * 48)
 
     # Appel du vrai orchestrateur (qui gère les arguments via sys.argv)
+    sys.path.insert(0, os.path.join(project_root, 'src'))
     from main import main as pipeline_main
     exit_code = pipeline_main()
 

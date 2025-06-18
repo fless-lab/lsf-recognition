@@ -45,6 +45,9 @@ class DatasetConsolidator:
                         'source': source_name,
                         'filename': file
                     })
+                    # Log la présence des fichiers .npy et _metadata.json
+                    metadata_path = file_path.replace('.npy', '_metadata.json')
+                    logger.info(f"Présence pour {sign_name}/{source_name} : .npy={'OK' if os.path.exists(file_path) else 'NON'} | _metadata.json={'OK' if os.path.exists(metadata_path) else 'NON'}")
         
         # Analyze distribution
         logger.info(f"Analyse terminée : {len(self.sign_sources)} signes trouvés.")
@@ -59,6 +62,7 @@ class DatasetConsolidator:
     
     def generate_corpus(self, min_confidence=0.3):
         logger.info(f"Génération du corpus avec filtrage qualité (min_conf={min_confidence})...")
+        logger.info(f"DEBUG: sign_files contient {len(self.sign_files)} signes : {list(self.sign_files.keys())}")
         """Generate corpus with quality filtering."""
         
         corpus_signs = []
@@ -67,43 +71,42 @@ class DatasetConsolidator:
         for sign_name, files in self.sign_files.items():
             # Check quality of all files for this sign
             sign_quality = []
-            
+            file_qualities = []
             for file_info in files:
                 metadata_path = file_info['path'].replace('.npy', '_metadata.json')
                 
                 if os.path.exists(metadata_path):
                     with open(metadata_path, 'r', encoding='utf-8') as f:
                         metadata = json.load(f)
-                    
-                    # Calculate quality score
                     avg_pose_conf = metadata.get('average_pose_confidence', 0)
                     avg_lh_conf = metadata.get('average_left_hand_confidence', 0)
                     avg_rh_conf = metadata.get('average_right_hand_confidence', 0)
-                    
-                    # Hand confidence is most important for sign language
                     hand_confidence = max(avg_lh_conf, avg_rh_conf)
                     quality_score = (avg_pose_conf + hand_confidence) / 2
-                    
                     sign_quality.append(quality_score)
+                    file_qualities.append((file_info['filename'], quality_score))
                 else:
                     sign_quality.append(0.0)
-            
-            # Only include signs with at least one good quality sample
-            if max(sign_quality) >= min_confidence:
+                    file_qualities.append((file_info['filename'], 0.0))
+            max_quality = max(sign_quality) if sign_quality else 0.0
+            mean_quality = np.mean(sign_quality) if sign_quality else 0.0
+            if max_quality >= min_confidence:
                 corpus_signs.append(sign_name)
                 quality_metrics[sign_name] = {
-                    'avg_quality': np.mean(sign_quality),
-                    'max_quality': max(sign_quality),
+                    'avg_quality': mean_quality,
+                    'max_quality': max_quality,
                     'num_sources': len(self.sign_sources[sign_name]),
                     'num_files': len(files),
                     'sources': self.sign_sources[sign_name]
                 }
-        
+                logger.info(f"✅ Signe gardé : {sign_name} | max qualité={max_quality:.3f} | moyenne={mean_quality:.3f} | sources={self.sign_sources[sign_name]}")
+            else:
+                logger.info(f"❌ Signe rejeté : {sign_name} | max qualité={max_quality:.3f} | moyenne={mean_quality:.3f} | sources={self.sign_sources[sign_name]}")
+            for fname, q in file_qualities:
+                logger.info(f"    - Fichier {fname} : qualité={q:.3f}")
         # Sort by quality and number of sources
         corpus_signs.sort(key=lambda x: (quality_metrics[x]['num_sources'], quality_metrics[x]['avg_quality']), reverse=True)
-        
-        logger.info(f"Corpus généré : {len(corpus_signs)} signes de qualité.")
-        
+        logger.info(f"Corpus généré : {len(corpus_signs)} signes retenus : {corpus_signs}")
         return corpus_signs, quality_metrics
     
     def create_dataset_splits(self, corpus_signs, quality_metrics):
@@ -225,7 +228,7 @@ def main():
     sign_sources, sign_files = consolidator.analyze_dataset()
     
     # Generate corpus with quality filtering
-    corpus_signs, quality_metrics = consolidator.generate_corpus(min_confidence=0.3)
+    corpus_signs, quality_metrics = consolidator.generate_corpus(min_confidence=0.0)
     
     # Create dataset splits
     split_assignments, train_signs, val_signs, test_signs = consolidator.create_dataset_splits(corpus_signs, quality_metrics)
@@ -253,3 +256,10 @@ def main():
         'test_signs': test_signs,
         'total_signs': len(corpus_signs)
     } 
+    
+    # Log récapitulatif
+    logger.info(f"RÉCAP : corpus.txt = {len(corpus_signs)} signes : {corpus_signs}")
+    logger.info(f"RÉCAP : train={len(train_signs)}, val={len(val_signs)}, test={len(test_signs)}") 
+
+if __name__ == '__main__':
+    main() 

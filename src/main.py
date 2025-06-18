@@ -2,6 +2,9 @@
 """
 Complete LSF Recognition Data Pipeline
 
+Ce script doit être lancé depuis la racine du projet (src/main.py).
+Il orchestre toutes les étapes : extraction, consolidation, augmentation, entraînement, évaluation.
+
 This script orchestrates the entire data processing pipeline:
 1. Extract landmarks from raw videos using MediaPipe Holistic
 2. Consolidate and create train/val/test splits with source separation
@@ -56,7 +59,10 @@ def run_script(script_path, description):
 def check_prerequisites():
     """Check if all required directories and files exist."""
     script_path = os.path.abspath(__file__)
-    project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_path)))
+    project_root = os.path.dirname(os.path.dirname(script_path))
+    if not os.path.exists(os.path.join(project_root, 'data')):
+        logger.error(f"Ce script doit être lancé depuis src/ (trouvé project_root={project_root})")
+        return False
     data_path = os.path.join(project_root, 'data')
     raw_path = os.path.join(data_path, 'raw')
     
@@ -108,7 +114,7 @@ def main():
     
     # Get script paths
     script_path = os.path.abspath(__file__)
-    project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_path)))
+    project_root = os.path.dirname(os.path.dirname(script_path))
     scripts_dir = os.path.join(project_root, 'src', 'data_processing')
     
     extraction_script = os.path.join(scripts_dir, 'extract_landmarks.py')
@@ -173,7 +179,32 @@ def main():
     
     logger.info("📁 Dataset ready for model training!")
     logger.info(f"📁 Data location: {data_path}")
-    
+
+    # === Ensure corpus is available at data/nlp/corpus.txt ===
+    nlp_dir = os.path.join(data_path, 'nlp')
+    os.makedirs(nlp_dir, exist_ok=True)
+    corpus_src = os.path.join(data_path, 'corpus.txt')
+    corpus_dst = os.path.join(nlp_dir, 'corpus.txt')
+    if os.path.exists(corpus_src):
+        import shutil
+        shutil.copy2(corpus_src, corpus_dst)
+        logger.info(f"✅ Copied corpus.txt to {corpus_dst}")
+    else:
+        logger.warning(f"❌ corpus.txt not found at {corpus_src}")
+
+    # === Step 4: Train the model ===
+    train_script = os.path.join(project_root, 'src', 'models', 'train_model.py')
+    if not run_script(train_script, "Model Training"):
+        logger.error("❌ Model training failed. Exiting.")
+        return 1
+
+    # === Step 5: Evaluate the model ===
+    eval_script = os.path.join(project_root, 'src', 'models', 'evaluate_model.py')
+    if not run_script(eval_script, "Model Evaluation"):
+        logger.error("❌ Model evaluation failed. Exiting.")
+        return 1
+
+    logger.info("🎉 All steps completed! You can now inspect the results in the models, logs, and data folders.")
     return 0
 
 if __name__ == '__main__':
