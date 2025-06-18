@@ -115,8 +115,13 @@ class DatasetConsolidator:
         val_path = os.path.join(self.data_path, 'val')
         test_path = os.path.join(self.data_path, 'test')
         
+        # Création inconditionnelle des dossiers train/val/test
         for path in [train_path, val_path, test_path]:
-            os.makedirs(path, exist_ok=True)
+            if not os.path.exists(path):
+                os.makedirs(path, exist_ok=True)
+                logger.info(f"Création du dossier : {path}")
+            else:
+                logger.info(f"Dossier déjà existant : {path}")
         
         split_assignments = {}
         train_signs = []
