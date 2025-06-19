@@ -10,7 +10,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # --- Config ---
-DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../data/processed'))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../'))
+DATA_DIR = os.path.join(PROJECT_ROOT, 'data', 'processed')
 CHECKPOINT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../siamese/checkpoints'))
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 MAX_SEQ_LEN = 200
@@ -23,6 +24,7 @@ def load_sequences(data_dir, max_per_class=100):
     """Charge les séquences .npy par classe."""
     X, y = [], []
     class_map = {}
+    print(data_dir)
     for label in sorted(os.listdir(data_dir)):
         class_dir = os.path.join(data_dir, label)
         if not os.path.isdir(class_dir):

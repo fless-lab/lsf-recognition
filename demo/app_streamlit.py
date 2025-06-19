@@ -5,6 +5,8 @@ import tempfile
 import os
 from tensorflow.keras.models import load_model
 import mediapipe as mp
+mp_holistic = mp.solutions.holistic
+mp_drawing = mp.solutions.drawing_utils
 import sys
 # Ajout du dossier racine au PYTHONPATH pour Streamlit
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -25,9 +27,6 @@ MODEL_TYPES = {
 }
 MAX_SEQ_LEN = 200
 THRESHOLD = st.sidebar.slider("Seuil d'inconnu (distance, few-shot)", 0.0, 10.0, 2.5, 0.1)
-
-mp_holistic = mp.solutions.holistic
-mp_drawing = mp.solutions.drawing_utils
 
 st.set_page_config(page_title="Reconnaissance LSF - Démo", layout="centered")
 st.title("Reconnaissance LSF - Démo Universelle")

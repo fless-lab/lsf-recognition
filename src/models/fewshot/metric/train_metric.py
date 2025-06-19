@@ -10,7 +10,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # --- Config ---
-DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../data/processed'))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
+DATA_DIR = os.path.join(PROJECT_ROOT, 'data', 'processed')
 CHECKPOINT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../metric/checkpoints'))
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 MAX_SEQ_LEN = 200

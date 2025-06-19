@@ -1,5 +1,7 @@
 import cv2
 import mediapipe as mp
+mp_holistic = mp.solutions.holistic
+mp_drawing = mp.solutions.drawing_utils
 import numpy as np
 import os
 import json
@@ -7,11 +9,6 @@ from pathlib import Path
 import logging
 import sys
 from src.utils.landmark_utils import extract_landmark_vector
-try:
-    from mediapipe.solutions import holistic as mp_holistic
-    from mediapipe.solutions import drawing_utils as mp_drawing
-except ImportError:
-    raise ImportError("mediapipe n'est pas installé ou n'est pas accessible. Veuillez installer mediapipe.")
 
 # Setup logging : console uniquement pour affichage en temps réel via subprocess
 logging.basicConfig(

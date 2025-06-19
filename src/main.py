@@ -56,6 +56,11 @@ MODEL_SCRIPTS = {
 
 STEPS = ['extraction', 'consolidation', 'augmentation', 'training', 'eval', 'demo']
 
+# Correction : rendre tous les chemins de scripts absolus
+for model, scripts in MODEL_SCRIPTS.items():
+    for key, rel_path in scripts.items():
+        if rel_path:
+            scripts[key] = os.path.abspath(rel_path)
 
 def run_script(script_path, description, extra_args=None):
     """Run a Python script and handle errors."""
