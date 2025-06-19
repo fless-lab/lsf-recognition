@@ -1,20 +1,10 @@
 #!/usr/bin/env python3
 """
-Complete LSF Recognition Data Pipeline
-
-Ce script doit être lancé depuis la racine du projet (src/main.py).
-Il orchestre toutes les étapes : extraction, consolidation, augmentation, entraînement, évaluation.
-
-This script orchestrates the entire data processing pipeline:
-1. Extract landmarks from raw videos using MediaPipe Holistic
-2. Consolidate and create train/val/test splits with source separation
-3. Augment training data with multiple techniques
-4. Generate final dataset ready for model training
-
-Usage:
-    python run_pipeline.py [--skip-extraction] [--skip-consolidation] [--skip-augmentation]
+Pipeline principal LSF Recognition (robuste, modulaire, extensible)
+Usage :
+    python src/main.py --model-type siamese --augmentation-factor 0 --until demo
+    python src/main.py --model-type classic --until eval
 """
-
 import os
 import sys
 import argparse
@@ -33,18 +23,53 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def run_script(script_path, description):
+# Modèles qui n'ont PAS besoin d'augmentation
+NO_AUGMENT_MODELS = {'siamese', 'prototypical', 'metric', 'matching'}
+# Mapping model type -> (train_script, eval_script, demo_script)
+MODEL_SCRIPTS = {
+    'classic': {
+        'train': 'src/models/classic/train_model.py',
+        'eval': 'src/models/classic/evaluate_model.py',
+        'demo': None
+    },
+    'siamese': {
+        'train': 'src/models/fewshot/siamese/train_siamese.py',
+        'eval': 'src/models/fewshot/siamese/eval_oneshot_cross_source.py',
+        'demo': 'src/models/fewshot/siamese/app_streamlit.py'
+    },
+    'prototypical': {
+        'train': 'src/models/fewshot/prototypical/train_prototypical.py',
+        'eval': None,
+        'demo': None
+    },
+    'metric': {
+        'train': 'src/models/fewshot/metric/train_metric.py',
+        'eval': None,
+        'demo': None
+    },
+    'matching': {
+        'train': 'src/models/fewshot/matching/train_matching.py',
+        'eval': None,
+        'demo': None
+    }
+}
+
+STEPS = ['extraction', 'consolidation', 'augmentation', 'training', 'eval', 'demo']
+
+
+def run_script(script_path, description, extra_args=None):
     """Run a Python script and handle errors."""
     logger.info(f"Starting: {description}")
     logger.info(f"Running: {script_path}")
-    
+    cmd = [sys.executable, script_path]
+    if extra_args:
+        cmd += extra_args
+    # Ajout du PYTHONPATH pour garantir les imports
+    env = os.environ.copy()
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    env['PYTHONPATH'] = project_root + (':' + env['PYTHONPATH'] if 'PYTHONPATH' in env else '')
     try:
-        # Forward stdout/stderr to parent (console + log)
-        # Ne pas utiliser capture_output pour voir la sortie en temps réel
-        result = subprocess.run(
-            [sys.executable, script_path],
-            cwd=os.path.dirname(script_path)
-        )
+        result = subprocess.run(cmd, cwd=os.path.dirname(script_path), env=env)
         if result.returncode == 0:
             logger.info(f"✅ Completed: {description}")
         else:
@@ -53,158 +78,121 @@ def run_script(script_path, description):
     except Exception as e:
         logger.error(f"❌ Exception in {description}: {str(e)}")
         return False
-    
-    return True
+
 
 def check_prerequisites():
     """Check if all required directories and files exist."""
     script_path = os.path.abspath(__file__)
     project_root = os.path.dirname(os.path.dirname(script_path))
-    if not os.path.exists(os.path.join(project_root, 'data')):
-        logger.error(f"Ce script doit être lancé depuis src/ (trouvé project_root={project_root})")
-        return False
     data_path = os.path.join(project_root, 'data')
     raw_path = os.path.join(data_path, 'raw')
-    
-    # Check if data directory exists
     if not os.path.exists(data_path):
         logger.error(f"Data directory not found: {data_path}")
-        logger.error("Please create the data directory and add raw videos.")
         return False
-    
-    # Check if raw directory exists and has content
     if not os.path.exists(raw_path):
         logger.error(f"Raw data directory not found: {raw_path}")
-        logger.error("Please create the raw directory and add video files.")
         return False
-    
-    # Check for expected source directories
-    expected_sources = ['parlr/jauvert', 'parlr/elix', 'parlr/education-nationale', 'custom']
-    found_sources = []
-    
-    for source in expected_sources:
-        source_path = os.path.join(raw_path, source)
-        if os.path.exists(source_path):
-            found_sources.append(source)
-    
-    if not found_sources:
-        logger.error("No source directories found in raw data.")
-        logger.error(f"Expected sources: {expected_sources}")
-        return False
-    
-    logger.info(f"Found source directories: {found_sources}")
     return True
 
+
 def main():
-    """Main pipeline execution."""
-    parser = argparse.ArgumentParser(description='LSF Recognition Data Pipeline')
-    parser.add_argument('--skip-extraction', action='store_true', 
-                       help='Skip landmark extraction step')
-    parser.add_argument('--skip-consolidation', action='store_true',
-                       help='Skip consolidation and splitting step')
-    parser.add_argument('--skip-augmentation', action='store_true',
-                       help='Skip data augmentation step')
-    parser.add_argument('--augmentation-factor', type=int, default=5,
-                       help='Number of augmented versions per original sample (default: 5)')
-    
-    args = parser.parse_args()
-    
-    logger.info("🚀 Starting LSF Recognition Data Pipeline")
+    parser = argparse.ArgumentParser(description='LSF Recognition Data Pipeline (robuste)')
+    parser.add_argument('--model-type', type=str, default='siamese', choices=list(MODEL_SCRIPTS.keys()),
+                        help='Type de modèle à entraîner (classic, siamese, prototypical, metric, matching)')
+    parser.add_argument('--until', type=str, default='demo', choices=STEPS,
+                        help='Arrêter le pipeline à cette étape (extraction, consolidation, augmentation, training, eval, demo)')
+    parser.add_argument('--skip-extraction', action='store_true', help='Sauter l\'étape d\'extraction des landmarks')
+    parser.add_argument('--skip-consolidation', action='store_true', help='Sauter l\'étape de consolidation/split')
+    parser.add_argument('--skip-augmentation', action='store_true', help='Sauter l\'étape d\'augmentation des données')
+    parser.add_argument('--augmentation-factor', type=int, default=5, help='Facteur d\'augmentation (défaut : 5)')
+    parser.add_argument('--no-demo', action='store_true', help='Ne pas lancer la démo Streamlit à la fin')
+    parser.add_argument('--force-reprocess', action='store_true', help='Forcer le retraitement des vidéos déjà traitées')
+    args, unknown = parser.parse_known_args()
+
+    logger.info("🚀 Lancement du pipeline LSF Recognition (robuste)")
     logger.info(f"Arguments: {vars(args)}")
-    
-    # Get script paths
+
+    # Vérification des prérequis
+    if not check_prerequisites():
+        logger.error("❌ Prérequis manquants. Arrêt.")
+        return 1
+
     script_path = os.path.abspath(__file__)
     project_root = os.path.dirname(os.path.dirname(script_path))
     scripts_dir = os.path.join(project_root, 'src', 'data_processing')
-    
+
     extraction_script = os.path.join(scripts_dir, 'extract_landmarks.py')
     consolidation_script = os.path.join(scripts_dir, 'consolidate.py')
     augmentation_script = os.path.join(scripts_dir, 'augment.py')
-    
-    # Check prerequisites
-    if not check_prerequisites():
-        logger.error("❌ Prerequisites check failed. Exiting.")
-        return 1
-    
-    # Step 1: Extract landmarks
-    if not args.skip_extraction:
-        if not run_script(extraction_script, "Landmark Extraction"):
+
+    # Orchestration dynamique
+    step_idx = STEPS.index(args.until)
+    steps_to_run = STEPS[:step_idx+1]
+
+    # Extraction
+    if 'extraction' in steps_to_run and not args.skip_extraction:
+        if not run_script(extraction_script, "Landmark Extraction", extra_args=(['--force-reprocess'] if args.force_reprocess else [])):
             logger.error("❌ Landmark extraction failed. Exiting.")
             return 1
     else:
         logger.info("⏭️ Skipping landmark extraction")
-    
-    # Step 2: Consolidate and create splits
-    if not args.skip_consolidation:
+    if args.until == 'extraction':
+        return 0
+
+    # Consolidation
+    if 'consolidation' in steps_to_run and not args.skip_consolidation:
         if not run_script(consolidation_script, "Dataset Consolidation and Splitting"):
             logger.error("❌ Consolidation failed. Exiting.")
             return 1
     else:
         logger.info("⏭️ Skipping consolidation")
-    
-    # Step 3: Augment training data
-    if not args.skip_augmentation:
-        # Modify augmentation script to use the specified factor
-        if args.augmentation_factor != 5:
-            logger.info(f"Modifying augmentation factor to {args.augmentation_factor}")
-            # This would require modifying the script or passing parameters
-            # For now, we'll use the default
-        
-        if not run_script(augmentation_script, "Data Augmentation"):
-            logger.error("❌ Data augmentation failed. Exiting.")
+    if args.until == 'consolidation':
+        return 0
+
+    # Augmentation (skippée si modèle few-shot ou flag)
+    if 'augmentation' in steps_to_run:
+        if args.model_type in NO_AUGMENT_MODELS or args.skip_augmentation or args.augmentation_factor == 0:
+            logger.info(f"⏭️ Skipping augmentation for model type {args.model_type}")
+        else:
+            if not run_script(augmentation_script, "Data Augmentation", extra_args=[f'--augmentation-factor={args.augmentation_factor}']):
+                logger.error("❌ Data augmentation failed. Exiting.")
+                return 1
+    if args.until == 'augmentation':
+        return 0
+
+    # Entraînement
+    train_script = MODEL_SCRIPTS[args.model_type]['train']
+    if 'training' in steps_to_run:
+        if not run_script(train_script, f"Model Training ({args.model_type})"):
+            logger.error("❌ Model training failed. Exiting.")
             return 1
-    else:
-        logger.info("⏭️ Skipping data augmentation")
-    
-    # Final summary
-    logger.info("🎉 Pipeline completed successfully!")
-    
-    # Print dataset statistics
-    data_path = os.path.join(project_root, 'data')
-    train_path = os.path.join(data_path, 'train')
-    val_path = os.path.join(data_path, 'val')
-    test_path = os.path.join(data_path, 'test')
-    
-    if os.path.exists(train_path):
-        train_signs = len([d for d in os.listdir(train_path) if os.path.isdir(os.path.join(train_path, d))])
-        logger.info(f"📊 Train set: {train_signs} signs")
-    
-    if os.path.exists(val_path):
-        val_signs = len([d for d in os.listdir(val_path) if os.path.isdir(os.path.join(val_path, d))])
-        logger.info(f"📊 Validation set: {val_signs} signs")
-    
-    if os.path.exists(test_path):
-        test_signs = len([d for d in os.listdir(test_path) if os.path.isdir(os.path.join(test_path, d))])
-        logger.info(f"📊 Test set: {test_signs} signs")
-    
-    logger.info("📁 Dataset ready for model training!")
-    logger.info(f"📁 Data location: {data_path}")
+    if args.until == 'training':
+        return 0
 
-    # === Ensure corpus is available at data/nlp/corpus.txt ===
-    nlp_dir = os.path.join(data_path, 'nlp')
-    os.makedirs(nlp_dir, exist_ok=True)
-    corpus_src = os.path.join(data_path, 'corpus.txt')
-    corpus_dst = os.path.join(nlp_dir, 'corpus.txt')
-    if os.path.exists(corpus_src):
-        import shutil
-        shutil.copy2(corpus_src, corpus_dst)
-        logger.info(f"✅ Copied corpus.txt to {corpus_dst}")
-    else:
-        logger.warning(f"❌ corpus.txt not found at {corpus_src}")
+    # Évaluation
+    eval_script = MODEL_SCRIPTS[args.model_type]['eval']
+    if 'eval' in steps_to_run and eval_script:
+        if not run_script(eval_script, f"Model Evaluation ({args.model_type})"):
+            logger.error("❌ Model evaluation failed. Exiting.")
+            return 1
+    elif 'eval' in steps_to_run:
+        logger.info(f"⏭️ No evaluation script for model type {args.model_type}")
+    if args.until == 'eval':
+        return 0
 
-    # === Step 4: Train the model ===
-    train_script = os.path.join(project_root, 'src', 'models', 'train_model.py')
-    if not run_script(train_script, "Model Training"):
-        logger.error("❌ Model training failed. Exiting.")
-        return 1
+    # Démo Streamlit
+    demo_script = MODEL_SCRIPTS[args.model_type]['demo']
+    if 'demo' in steps_to_run and demo_script and not args.no_demo:
+        logger.info(f"🚀 Lancement de la démo Streamlit pour le modèle {args.model_type}...")
+        # Lancer Streamlit en sous-processus
+        try:
+            subprocess.run([sys.executable, demo_script])
+        except Exception as e:
+            logger.error(f"❌ Erreur lors du lancement de la démo : {e}")
+    elif 'demo' in steps_to_run:
+        logger.info(f"⏭️ No demo available for model type {args.model_type} or demo skipped.")
 
-    # === Step 5: Evaluate the model ===
-    eval_script = os.path.join(project_root, 'src', 'models', 'evaluate_model.py')
-    if not run_script(eval_script, "Model Evaluation"):
-        logger.error("❌ Model evaluation failed. Exiting.")
-        return 1
-
-    logger.info("🎉 All steps completed! You can now inspect the results in the models, logs, and data folders.")
+    logger.info("🎉 Pipeline complet terminé !")
     return 0
 
 if __name__ == '__main__':

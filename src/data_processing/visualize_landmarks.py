@@ -14,6 +14,8 @@ import json
 import argparse
 from pathlib import Path
 import logging
+import sys
+from src.utils.landmark_utils import extract_landmark_vector
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

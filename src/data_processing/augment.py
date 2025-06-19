@@ -8,6 +8,8 @@ from scipy.interpolate import interp1d
 from sklearn.preprocessing import StandardScaler
 import copy
 from typing import List, Tuple, Dict, Any
+import sys
+from src.utils.landmark_utils import extract_landmark_vector
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

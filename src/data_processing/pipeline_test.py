@@ -14,6 +14,7 @@ import numpy as np
 import json
 import logging
 from pathlib import Path
+from src.utils.landmark_utils import extract_landmark_vector
 from extract_landmarks import LandmarkExtractor
 from consolidate import DatasetConsolidator
 from augment import DataAugmenter

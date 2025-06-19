@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import logging
 import sys
-from src.data_processing.landmark_utils import extract_landmark_vector
+from src.utils.landmark_utils import extract_landmark_vector
 try:
     from mediapipe.solutions import holistic as mp_holistic
     from mediapipe.solutions import drawing_utils as mp_drawing
