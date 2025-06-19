@@ -6,6 +6,12 @@ import json
 from pathlib import Path
 import logging
 import sys
+from src.data_processing.landmark_utils import extract_landmark_vector
+try:
+    from mediapipe.solutions import holistic as mp_holistic
+    from mediapipe.solutions import drawing_utils as mp_drawing
+except ImportError:
+    raise ImportError("mediapipe n'est pas installé ou n'est pas accessible. Veuillez installer mediapipe.")
 
 # Setup logging : console uniquement pour affichage en temps réel via subprocess
 logging.basicConfig(
@@ -14,11 +20,6 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)]
 )
 logger = logging.getLogger(__name__)
-
-# Correct MediaPipe imports for linter
-from mediapipe import solutions as mp_solutions
-mp_holistic = mp_solutions.holistic
-mp_drawing = mp_solutions.drawing_utils
 
 class LandmarkExtractor:
     def __init__(self, min_detection_confidence=0.5, min_tracking_confidence=0.5):
@@ -36,34 +37,19 @@ class LandmarkExtractor:
         
     def extract_keypoints(self, results):
         """Extracts landmark data into a structured format with confidence scores."""
-        # Pose landmarks (33 points)
-        pose = np.array([[res.x, res.y, res.z, res.visibility] for res in results.pose_landmarks.landmark]).flatten() if results.pose_landmarks else np.zeros(33*4)
-        
-        # Face landmarks (468 points) - only x, y, z (no visibility)
-        face = np.array([[res.x, res.y, res.z] for res in results.face_landmarks.landmark]).flatten() if results.face_landmarks else np.zeros(468*3)
-        
-        # Left hand landmarks (21 points)
-        lh = np.array([[res.x, res.y, res.z] for res in results.left_hand_landmarks.landmark]).flatten() if results.left_hand_landmarks else np.zeros(21*3)
-        
-        # Right hand landmarks (21 points)
-        rh = np.array([[res.x, res.y, res.z] for res in results.right_hand_landmarks.landmark]).flatten() if results.right_hand_landmarks else np.zeros(21*3)
-        
+        # Utilise la fonction utilitaire unique
+        landmarks = extract_landmark_vector(results)
         # Calculate confidence scores
         pose_confidence = np.mean([res.visibility for res in results.pose_landmarks.landmark]) if results.pose_landmarks else 0.0
         face_confidence = 1.0 if results.face_landmarks else 0.0
         lh_confidence = 1.0 if results.left_hand_landmarks else 0.0
         rh_confidence = 1.0 if results.right_hand_landmarks else 0.0
-        
-        # Combine all landmarks
-        landmarks = np.concatenate([pose, face, lh, rh])
-        
-        # Create metadata
         metadata = {
             'pose_confidence': float(pose_confidence),
             'face_confidence': float(face_confidence),
             'left_hand_confidence': float(lh_confidence),
             'right_hand_confidence': float(rh_confidence),
-            'total_frames': len(landmarks) // (33*4 + 468*3 + 21*3 + 21*3),
+            'total_frames': 1,
             'landmark_dimensions': {
                 'pose': 33*4,
                 'face': 468*3,
@@ -71,7 +57,6 @@ class LandmarkExtractor:
                 'right_hand': 21*3
             }
         }
-        
         return landmarks, metadata
 
     def process_video(self, video_path):

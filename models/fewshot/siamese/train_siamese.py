@@ -85,16 +85,78 @@ def build_siamese(input_shape, embed_dim=EMBED_DIM):
     siamese = Model([input_a, input_b], out)
     return siamese, encoder
 
+# --- Data generator ---
+def siamese_batch_generator(X, y, batch_size=32):
+    """Génère des batches de paires (ancre, comparée) et labels (1=same, 0=diff) à la volée."""
+    class_indices = {c: np.where(y == c)[0] for c in np.unique(y)}
+    double_classes = [c for c, idxs in class_indices.items() if len(idxs) > 1]
+    all_classes = list(class_indices.keys())
+    while True:
+        X1, X2, labels = [], [], []
+        for _ in range(batch_size // 2):
+            # Positive pair (si possible)
+            if double_classes:
+                c = random.choice(double_classes)
+                idx1, idx2 = np.random.choice(class_indices[c], 2, replace=False)
+                X1.append(X[idx1])
+                X2.append(X[idx2])
+                labels.append(1)
+            # Negative pair
+            c1, c2 = random.sample(all_classes, 2)
+            idx1 = np.random.choice(class_indices[c1])
+            idx2 = np.random.choice(class_indices[c2])
+            X1.append(X[idx1])
+            X2.append(X[idx2])
+            labels.append(0)
+        # Shuffle
+        arr = list(zip(X1, X2, labels))
+        random.shuffle(arr)
+        X1, X2, labels = zip(*arr)
+        yield (
+            (np.array(X1, dtype=np.float32), np.array(X2, dtype=np.float32)),
+            np.array(labels, dtype=np.int64)
+        )
+
 # --- Main ---
 def main():
     X, y, class_map = load_sequences(DATA_DIR)
-    pairs, labels = make_pairs(X, y, n_pairs=500)
-    logger.info(f"Generated {len(labels)} pairs.")
+    logger.info("Utilisation du data generator batché pour l'entraînement.")
     input_shape = (MAX_SEQ_LEN, X.shape[2])
     model, encoder = build_siamese(input_shape)
     model.compile(optimizer=Adam(1e-3), loss='binary_crossentropy', metrics=['accuracy'])
     model.summary()
-    model.fit(pairs, labels, batch_size=BATCH_SIZE, epochs=EPOCHS, validation_split=0.1)
+    batch_size = 32
+    steps_per_epoch = 200  # 200 batches/epoch = 6400 paires/epoch
+    val_steps = 20
+    # Split simple pour validation
+    idx = np.arange(len(X))
+    np.random.shuffle(idx)
+    split = int(0.9 * len(X))
+    X_train, y_train = X[idx[:split]], y[idx[:split]]
+    X_val, y_val = X[idx[split:]], y[idx[split:]]
+
+    import tensorflow as tf
+    output_signature = (
+        (tf.TensorSpec(shape=(None, MAX_SEQ_LEN, X.shape[2]), dtype=tf.float32),
+         tf.TensorSpec(shape=(None, MAX_SEQ_LEN, X.shape[2]), dtype=tf.float32)),
+        tf.TensorSpec(shape=(None,), dtype=tf.int64)
+    )
+    train_dataset = tf.data.Dataset.from_generator(
+        lambda: siamese_batch_generator(X_train, y_train, batch_size=batch_size),
+        output_signature=output_signature
+    )
+    val_dataset = tf.data.Dataset.from_generator(
+        lambda: siamese_batch_generator(X_val, y_val, batch_size=batch_size),
+        output_signature=output_signature
+    )
+
+    model.fit(
+        train_dataset,
+        steps_per_epoch=steps_per_epoch,
+        epochs=50,
+        validation_data=val_dataset,
+        validation_steps=val_steps
+    )
     model.save(os.path.join(CHECKPOINT_DIR, 'siamese_model.keras'))
     encoder.save(os.path.join(CHECKPOINT_DIR, 'siamese_encoder.keras'))
     logger.info("Models saved.")
