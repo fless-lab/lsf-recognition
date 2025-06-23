@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 # --- Config ---
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../'))
 DATA_DIR = os.path.join(PROJECT_ROOT, 'data', 'processed')
-CHECKPOINT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../siamese/checkpoints'))
+CHECKPOINT_DIR = os.path.join(PROJECT_ROOT, 'models', 'fewshot', 'siamese')
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 MAX_SEQ_LEN = 200
 BATCH_SIZE = 16
@@ -72,8 +72,7 @@ def make_pairs(X, y, n_pairs=500):
 # --- Model ---
 def build_siamese(input_shape, embed_dim=EMBED_DIM):
     inp = Input(shape=input_shape)
-    x = layers.Masking(mask_value=0.)(inp)
-    x = layers.Bidirectional(layers.LSTM(64, return_sequences=True))(x)
+    x = layers.Bidirectional(layers.LSTM(64, return_sequences=True))(inp)
     x = layers.Bidirectional(layers.LSTM(64))(x)
     x = layers.Dense(embed_dim, activation='relu')(x)
     encoder = Model(inp, x, name='encoder')

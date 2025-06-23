@@ -35,7 +35,7 @@ MODEL_SCRIPTS = {
     'siamese': {
         'train': 'src/models/fewshot/siamese/train_siamese.py',
         'eval': 'src/models/fewshot/siamese/eval_oneshot_cross_source.py',
-        'demo': 'src/models/fewshot/siamese/app_streamlit.py'
+        'demo': os.path.abspath('demo/app_streamlit.py')
     },
     'prototypical': {
         'train': 'src/models/fewshot/prototypical/train_prototypical.py',

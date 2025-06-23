@@ -11,6 +11,7 @@ import sys
 # Ajout du dossier racine au PYTHONPATH pour Streamlit
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.utils.landmark_utils import extract_landmark_vector
+from src.data_processing.extract_landmarks import LandmarkExtractor
 
 # --- Config ---
 MODEL_TYPES = {
@@ -72,7 +73,7 @@ def load_support_set(support_dir):
 
 # --- Extraction des landmarks ---
 def extract_landmarks_from_video(video_path):
-    holistic = mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5)
+    extractor = LandmarkExtractor(min_detection_confidence=0.5, min_tracking_confidence=0.5)
     cap = cv2.VideoCapture(video_path)
     keypoints_list = []
     frames = []
@@ -81,7 +82,7 @@ def extract_landmarks_from_video(video_path):
         if not ret:
             break
         image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        results = holistic.process(image)
+        results = extractor.holistic.process(image)
         keypoints = extract_landmark_vector(results)
         keypoints_list.append(keypoints)
         mp_drawing.draw_landmarks(frame, results.left_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
@@ -89,7 +90,7 @@ def extract_landmarks_from_video(video_path):
         mp_drawing.draw_landmarks(frame, results.pose_landmarks, mp_holistic.POSE_CONNECTIONS)
         frames.append(frame.copy())
     cap.release()
-    holistic.close()
+    extractor.holistic.close()
     keypoints_arr = np.array(keypoints_list)
     if keypoints_arr.shape[0] < MAX_SEQ_LEN:
         keypoints_arr = np.pad(keypoints_arr, ((0, MAX_SEQ_LEN - keypoints_arr.shape[0]), (0,0)), mode='constant')

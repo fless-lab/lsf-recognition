@@ -23,8 +23,8 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../data/processed'))
-ENCODER_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'checkpoints/siamese_encoder.keras'))
+DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../data/processed'))
+ENCODER_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../models/fewshot/siamese/siamese_encoder.keras'))
 MAX_SEQ_LEN = 200
 
 # --- Utilitaires ---
