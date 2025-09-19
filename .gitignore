@@ -12,10 +12,10 @@ logs/
 
 # Datasets
 data/raw/
-data/processed/
-data/train/
-data/val/
-data/test/
+data/processed/*
+data/train/*
+data/val/*
+data/test/*
 data/nlp/
 
 # Models
@@ -26,3 +26,4 @@ models/pretrained/
 *.log
 *.DS_Store
 *.ipynb_checkpoints/
+data/corpus.txt
